@@ -45,13 +45,13 @@ const processSteps = [
 ];
 
 const galleryImages = [
-  "./../public/img/aibo-car_01.webp",
-  "./../public/img/aibo-car_02.webp",
-  "./../public/img/aibo-car_03.webp",
-  "./../public/img/aibo-car_04.webp",
-  "./../public/img/aibo-car_05.webp",
-  "./../public/img/aibo-car_06.webp",
-  "./../public/img/aibo-car_07.webp",
+  "/img/aibo-car_01.webp",
+  "/img/aibo-car_02.webp",
+  "/img/aibo-car_03.webp",
+  "/img/aibo-car_04.webp",
+  "/img/aibo-car_05.webp",
+  "/img/aibo-car_06.webp",
+  "/img/aibo-car_07.webp",
 ];
 
 const AibomarketProject = () => {
@@ -96,7 +96,7 @@ const AibomarketProject = () => {
         <div className="container mx-auto px-6">
           <div className="rounded-2xl overflow-hidden border border-border">
             <img
-              src="./../public/img/aibo_01.webp"
+              src="/img/aibo_01.webp"
               alt="Aibomarket - Marketplace gastronómico"
               className="w-full object-cover"
             />
@@ -150,7 +150,7 @@ const AibomarketProject = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="rounded-2xl overflow-hidden border border-border">
               <img
-                src="./../public/img/aibo_02.webp"
+                src="/img/aibo_02.webp"
                 alt="Componentes multimarca"
                 className="w-full"
               />
@@ -198,7 +198,7 @@ const AibomarketProject = () => {
         <div className="container mx-auto px-6">
           <div className="rounded-2xl overflow-hidden border border-border">
             <img
-              src="./../public/img/aibo_03.webp"
+              src="/img/aibo_03.webp"
               alt="Proceso de diseño Aibomarket"
               className="w-full"
             />

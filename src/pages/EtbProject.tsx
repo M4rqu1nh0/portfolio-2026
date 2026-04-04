@@ -45,13 +45,13 @@ const processSteps = [
 ];
 
 const galleryImages = [
-  "./../public/img/n-etb-car_01.webp",
-  "./../public/img/n-etb-car_02.webp",
-  "./../public/img/n-etb-car_03.webp",
-  "./../public/img/n-etb-car_04.webp",
-  "./../public/img/n-etb-car_05.webp",
-  "./../public/img/n-etb-car_06.webp",
-  "./../public/img/n-etb-car_07.webp",
+  "/img/n-etb-car_01.webp",
+  "/img/n-etb-car_02.webp",
+  "/img/n-etb-car_03.webp",
+  "/img/n-etb-car_04.webp",
+  "/img/n-etb-car_05.webp",
+  "/img/n-etb-car_06.webp",
+  "/img/n-etb-car_07.webp",
 ];
 
 const EtbProject = () => {
@@ -96,7 +96,7 @@ const EtbProject = () => {
         <div className="container mx-auto px-6">
           <div className="rounded-2xl overflow-hidden border border-border">
             <img
-              src="./../public/img/n-etb_01.webp"
+              src="/img/n-etb_01.webp"
               alt="ETB - Validación de Cobertura"
               className="w-full object-cover"
             />
@@ -150,7 +150,7 @@ const EtbProject = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="rounded-2xl overflow-hidden border border-border">
               <img
-                src="./../public/img/n-etb_02.webp"
+                src="/img/n-etb_02.webp"
                 alt="Inicio del flujo de validación"
                 className="w-full"
               />

@@ -25,6 +25,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Copy public assets
+        run: cp -r public/img public/pdf public/favicon.ico dist/
+
       - name: Deploy to Cpanel
         uses: easingthemes/sftp-deploy@v2.2.8
         with:

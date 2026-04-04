@@ -12,7 +12,7 @@ const projects = [
     description:
       "Transformación completa de la plataforma empresarial del banco más grande de Chile. Desde discovery hasta implementación frontend.",
     tags: ["End to End", "Design Thinking", "UX/UI", "Research", "Angular"],
-    image: "./../public/img/s-ob_01.webp",
+    image: "/img/s-ob_01.webp",
     link: "/proyecto/santander-officebanking",
     metrics: [
       { label: "Duración", value: "2 años" },
@@ -26,7 +26,7 @@ const projects = [
     description:
       "Marketplace gastronómico B2B. Desarrollo frontend con NextJS y definición UX colaborativa.",
     tags: ["UX/UI", "NextJS", "Figma", "Multimarca"],
-    image: "./../public/img/aibo_01.webp",
+    image: "/img/aibo_01.webp",
     link: "/proyecto/marsol-aibomarket",
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     description:
       "Plataforma de gestión de feedback corporativo con enfoque colaborativo para equipos distribuidos.",
     tags: ["UX/UI", "Figma", "Colaborativo"],
-    image: "./../public/img/n-wg_01.webp",
+    image: "/img/n-wg_01.webp",
     link: "/proyecto/neoris-wegrow",
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     description:
       "Autovalidación de cobertura de fibra óptica para la principal operadora de telecomunicaciones de Bogotá.",
     tags: ["UX/UI", "Figma", "Negocio"],
-    image: "./../public/img/n-etb_01.webp",
+    image: "/img/n-etb_01.webp",
     link: "/proyecto/neoris-etb",
   },
 ];

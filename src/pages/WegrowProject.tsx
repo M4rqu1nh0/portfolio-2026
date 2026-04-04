@@ -45,13 +45,13 @@ const processSteps = [
 ];
 
 const galleryImages = [
-  "./../public/img/n-wg-car_01.webp",
-  "./../public/img/n-wg-car_02.webp",
-  "./../public/img/n-wg-car_03.webp",
-  "./../public/img/n-wg-car_04.webp",
-  "./../public/img/n-wg-car_05.webp",
-  "./../public/img/n-wg-car_06.webp",
-  "./../public/img/n-wg-car_07.webp",
+  "/img/n-wg-car_01.webp",
+  "/img/n-wg-car_02.webp",
+  "/img/n-wg-car_03.webp",
+  "/img/n-wg-car_04.webp",
+  "/img/n-wg-car_05.webp",
+  "/img/n-wg-car_06.webp",
+  "/img/n-wg-car_07.webp",
 ];
 
 const WegrowProject = () => {
@@ -96,7 +96,7 @@ const WegrowProject = () => {
         <div className="container mx-auto px-6">
           <div className="rounded-2xl overflow-hidden border border-border">
             <img
-              src="./../public/img/n-wg_01.webp"
+              src="/img/n-wg_01.webp"
               alt="WeGrow - Plataforma de feedback"
               className="w-full object-cover"
             />
@@ -150,7 +150,7 @@ const WegrowProject = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="rounded-2xl overflow-hidden border border-border">
               <img
-                src="./../public/img/n-wg_02.webp"
+                src="/img/n-wg_02.webp"
                 alt="Dashboard WeGrow"
                 className="w-full"
               />

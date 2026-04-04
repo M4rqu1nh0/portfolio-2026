@@ -19,7 +19,7 @@ const HeroSection = () => {
           {/* Main heading */}
           <div className="grid auto-cols-max grid-flow-col">
             <figure className="mr-[32px] animate-fade-up opacity-0 stagger-1 border-2 border-white rounded-full flex items-center justify-center">
-              <img src="../../public/img/mvc.webp" alt="Marco Villegas" className="rounded-full w-64 h-64 mx-auto object-cover" />
+              <img src="/img/mvc.webp" alt="Marco Villegas" className="rounded-full w-64 h-64 mx-auto object-cover" />
             </figure>
             <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] tracking-tight animate-fade-up opacity-0 stagger-2">
               Diseño productos
@@ -39,7 +39,7 @@ const HeroSection = () => {
           {/* CTA */}
           <div className="flex items-center justify-center gap-4 mt-10 animate-fade-up opacity-0 stagger-4">
             <a
-              href="../../public/pdf/CV_Marco_Villegas-UX.pdf"
+              href="/pdf/CV_Marco_Villegas-UX.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="transition duration-300 bg-gradient-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-full hover:bg-gradient-accent transition-opacity shadow-glow"

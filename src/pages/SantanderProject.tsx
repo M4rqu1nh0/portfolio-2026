@@ -45,13 +45,13 @@ const processSteps = [
 ];
 
 const carouselImages = [
-  "./../public/img/s-ob-car_01.webp",
-  "./../public/img/s-ob-car_02.webp",
-  "./../public/img/s-ob-car_03.webp",
-  "./../public/img/s-ob-car_04.webp",
-  "./../public/img/s-ob-car_05.webp",
-  "./../public/img/s-ob-car_06.webp",
-  "./../public/img/s-ob-car_07.webp",
+  "/img/s-ob-car_01.webp",
+  "/img/s-ob-car_02.webp",
+  "/img/s-ob-car_03.webp",
+  "/img/s-ob-car_04.webp",
+  "/img/s-ob-car_05.webp",
+  "/img/s-ob-car_06.webp",
+  "/img/s-ob-car_07.webp",
 ];
 
 const SantanderProject = () => {
@@ -96,7 +96,7 @@ const SantanderProject = () => {
         <div className="container mx-auto px-6">
           <div className="rounded-2xl overflow-hidden border border-border">
             <img
-              src="./../public/img/s-ob_01.webp"
+              src="/img/s-ob_01.webp"
               alt="OfficeBanking - Nueva plataforma"
               className="w-full object-cover"
             />
@@ -150,7 +150,7 @@ const SantanderProject = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="rounded-2xl overflow-hidden border border-border">
               <img
-                src="./../public/img/s-ob_02.webp"
+                src="/img/s-ob_02.webp"
                 alt="Versión anterior de OfficeBanking"
                 className="w-full"
               />
@@ -198,7 +198,7 @@ const SantanderProject = () => {
         <div className="container mx-auto px-6">
           <div className="rounded-2xl overflow-hidden border border-border">
             <img
-              src="./../public/img/s-ob_03.webp"
+              src="/img/s-ob_03.webp"
               alt="Proceso de diseño"
               className="w-full"
             />
