@@ -29,11 +29,11 @@ jobs:
         run: cp -r public/img public/pdf public/favicon.ico dist/
 
       - name: Deploy to Cpanel
-        uses: easingthemes/sftp-deploy@v2.2.8
+        uses: pressable/github-action-sftp-deploy@v1
         with:
-          server: ${{ secrets.CPANEL_HOST }}
+          host: ${{ secrets.CPANEL_HOST }}
           port: 21
           username: ${{ secrets.CPANEL_USER }}
           password: ${{ secrets.CPANEL_PASSWORD }}
-          localDir: dist
-          remoteDir: /public_html
+          local_path: dist
+          remote_path: /public_html
