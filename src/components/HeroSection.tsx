@@ -17,7 +17,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main heading */}
-          <div className="grid auto-cols-max grid-flow-col">
+          <div className="flex flex-col items-center gap-6 md:flex-row md:justify-center md:gap-10">
             <figure className="mr-[32px] animate-fade-up opacity-0 stagger-1 border-2 border-white rounded-full flex items-center justify-center">
               <img src="/img/mvc.webp" alt="Marco Villegas" className="rounded-full w-64 h-64 mx-auto object-cover" />
             </figure>
