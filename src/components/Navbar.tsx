@@ -70,7 +70,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
         <Link to="/" className="font-heading text-lg font-semibold tracking-tight">
-          <span className="transition duration-500 text-gradient-primary hover:text-gradient-accent">&lt; Marco Villegas /&gt;</span>
+          <span className="transition duration-500 text-gradient-primary hover:text-gradient-accent">&lt; Marco Villegas - UX /&gt;</span>
         </Link>
 
         {isIndex ? (

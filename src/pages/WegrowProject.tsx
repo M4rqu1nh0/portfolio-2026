@@ -49,7 +49,7 @@ const galleryImages = [
   "/img/n-wg-car_02.webp",
   "/img/n-wg-car_03.webp",
   "/img/n-wg-car_04.webp",
-  "/img/n-wg-car_05.webp",
+  // "/img/n-wg-car_05.webp",
   "/img/n-wg-car_06.webp",
   "/img/n-wg-car_07.webp",
 ];
@@ -85,6 +85,7 @@ const WegrowProject = () => {
             </p>
             <div className="flex gap-3 text-sm text-muted-foreground">
               <span className="bg-secondary px-3 py-1 rounded-full">Diseñador UX</span>
+              <span className="bg-secondary px-3 py-1 rounded-full">Proyecto Interno</span>
               <span className="bg-secondary px-3 py-1 rounded-full">Trabajo Colaborativo</span>
             </div>
           </div>
@@ -159,7 +160,7 @@ const WegrowProject = () => {
               <span className="text-xs font-medium text-primary uppercase tracking-widest mb-2 block">Dashboard</span>
               <h2 className="font-heading text-2xl font-bold mb-4">Vista general</h2>
               <p className="text-muted-foreground leading-relaxed">
-                El dashboard central permite a cada usuario visualizar su estado de evaluación, feedback pendiente y progreso profesional de manera clara y accesible.
+                El dashboard central permite a cada usuario visualizar su estado en cuanto a evaluaciones por realizar, feedback recibido y progreso profesional de manera clara y accesible.
               </p>
             </div>
           </div>
@@ -170,8 +171,8 @@ const WegrowProject = () => {
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">El Proceso</h2>
-          <p className="text-muted-foreground mb-16 max-w-lg">
-            Coordinación ágil entre equipos distribuidos para entregar un MVP de alta complejidad.
+          <p className="text-muted-foreground mb-16 max-w-4x1">
+            Coordinación ágil entre equipos distribuidos para entregar un MVP que cumpla con las necesidades de un proyecto de alta complejidad.
           </p>
 
           <div className="space-y-8">

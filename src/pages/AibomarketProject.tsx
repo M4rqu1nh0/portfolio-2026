@@ -5,9 +5,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const metrics = [
-  { value: "1 año", label: "Duración del proyecto" },
-  { value: "Multi", label: "Marcas soportadas" },
-  { value: "NextJS", label: "Stack tecnológico" },
+  { value: "2 años", label: "de participación" },
+  { value: "Figma", label: "Diseño y Prototipado" },
+  { value: "NextJS", label: "Frontend Framework" },
   { value: "B2B", label: "Modelo de negocio" },
 ];
 
@@ -34,24 +34,24 @@ const processSteps = [
     number: "04",
     title: "Desarrollo Frontend",
     description:
-      "Desarrollo de vistas, landings internas y componentes en NextJS, estructurando en HTML5 y SASS, cuidando consistencia, mantenibilidad y performance.",
+      "Desarrollo de vistas, landings internas y componentes en NextJS, estructurando en HTML5 y SASS, cuidando consistencia, mantenibilidad y performance. Uso de IA para optimizar tiempos de desarrollo.",
   },
   {
     number: "05",
-    title: "Responsive & QA",
+    title: "Responsive & UX QA",
     description:
-      "Validación constante de responsive design, asegurando una experiencia sólida en todos los dispositivos. Uso de IA para optimizar tiempos de desarrollo.",
+      "Validación constante de responsive design y soporte multinavegador, asegurando una experiencia sólida en todos los dispositivos. ",
   },
 ];
 
 const galleryImages = [
   "/img/aibo-car_01.webp",
   "/img/aibo-car_02.webp",
+  "/img/aibo-car_07.webp",
   "/img/aibo-car_03.webp",
   "/img/aibo-car_04.webp",
-  "/img/aibo-car_05.webp",
+  // "/img/aibo-car_05.webp",
   "/img/aibo-car_06.webp",
-  "/img/aibo-car_07.webp",
 ];
 
 const AibomarketProject = () => {
@@ -75,7 +75,7 @@ const AibomarketProject = () => {
 
           <div className="max-w-3xl">
             <span className="text-xs font-medium text-primary uppercase tracking-widest mb-3 block">
-              Marsol S.A. · 2024–2025
+              Marsol S.A. · 2024 - 2025
             </span>
             <h1 className="font-heading text-4xl md:text-6xl font-bold leading-tight mb-4">
               Aibomarket
@@ -84,8 +84,8 @@ const AibomarketProject = () => {
               Marketplace gastronómico multimarca B2B
             </p>
             <div className="flex gap-3 text-sm text-muted-foreground">
-              <span className="bg-secondary px-3 py-1 rounded-full">Frontend Developer</span>
-              <span className="bg-secondary px-3 py-1 rounded-full">UX/UI</span>
+              <span className="bg-secondary px-3 py-1 rounded-full">UX/UI Designer</span>
+              <span className="bg-secondary px-3 py-1 rounded-full">Frontend</span>
             </div>
           </div>
         </div>
@@ -128,16 +128,16 @@ const AibomarketProject = () => {
                 Aibomarket es un marketplace gastronómico cuyo foco principal es la venta en línea de equipamiento, suministros y servicios para negocios del área gastronómica.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Además es una solución multimarca que permite la administración y customización de los componentes para cada una de las marcas asociadas.
+                Además, evolucionó para convertirse en una solución multimarca que permite la administración y customización de los componentes para cada una de las marcas asociadas.
               </p>
             </div>
             <div>
               <h2 className="font-heading text-2xl font-bold mb-4">El Desafío</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Implementar mejoras de diseño y nuevos flujos de forma rápida y eficiente, en un contexto donde el producto debía escalar a múltiples marcas.
+                Junto al UX Lead implementar mejoras de diseño y nuevos flujos de forma rápida y eficiente, en un contexto donde el producto debía escalar a múltiples marcas.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Reducir la distancia entre diseño y producción, permitiendo que las decisiones de UX se reflejaran en el producto final con el menor retrabajo posible.
+                Reducir la fricción entre diseño y producción, colaborando con la implementación de las mejoras de diseño en el aplicativo, formando parte  del equipo de frontend, de ésta forma las decisiones de UX se reflejaran en el producto final rápidamente y con el menor retrabajo posible.
               </p>
             </div>
           </div>
@@ -159,7 +159,7 @@ const AibomarketProject = () => {
               <span className="text-xs font-medium text-primary uppercase tracking-widest mb-2 block">Multimarca</span>
               <h2 className="font-heading text-2xl font-bold mb-4">Componentes escalables</h2>
               <p className="text-muted-foreground leading-relaxed">
-                El producto se volvió multimarca y los componentes debían poder estilarse según cada una de ellas, manteniendo consistencia visual y experiencia de usuario coherente en todos los casos.
+                El producto se volvió multimarca y los componentes debían poder estilarse según cada una de ellas, manteniendo consistencia visual y experiencia de usuario coherente en todos los casos. Lo cual significó un desafío adicional, ya que no solo se trataba de diseñar y desarrollar componentes, sino de hacerlo pensando en su adaptabilidad y escalabilidad para múltiples marcas sin duplicar código sino que customizándolos a partir de clases, de manera tal que la funcionalidad estaba separada del estilo.
               </p>
             </div>
           </div>
@@ -169,8 +169,8 @@ const AibomarketProject = () => {
       {/* Process */}
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">El Proceso</h2>
-          <p className="text-muted-foreground mb-16 max-w-lg">
+          <h2 className="font-heading text-4xl md:text-4xl font-bold mb-4">El Proceso</h2>
+          <p className="text-muted-foreground mb-16 max-w-4x1">
             Colaboración estrecha entre diseño y desarrollo para lograr entregas rápidas y consistentes.
           </p>
 
@@ -210,7 +210,7 @@ const AibomarketProject = () => {
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Resultados</h2>
-          <p className="text-muted-foreground mb-12 max-w-lg">
+          <p className="text-muted-foreground mb-12 max-w-4x1">
             Interfaces integradas al desarrollo, listas para producción, alineadas a diseño y negocio.
           </p>
 

@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 const metrics = [
   { value: "2 años", label: "Duración del proyecto" },
-  { value: "5+", label: "Segmentos de clientes" },
+  { value: "Múltiples", label: "Segmentos de clientes" },
   { value: "100%", label: "Renovación visual" },
   { value: "Angular", label: "Stack tecnológico" },
 ];
@@ -14,33 +14,33 @@ const metrics = [
 const processSteps = [
   {
     number: "01",
-    title: "Discovery & Research",
+    title: "Definición de Metodología",
     description:
-      "Entrevistas con usuarios, análisis de métricas existentes y revisión de reclamos. Identificación de pain points clave en colaboración con el área de CX del banco.",
+      "Implementación de Design Thinking como marco de trabajo para el proceso inicial. Alineación con stakeholders y equipo de desarrollo sobre la importancia del proceso UX completo para este proyecto tan amplio y complejo.",
   },
   {
     number: "02",
-    title: "Definición de Metodología",
+    title: "Discovery & Research",
     description:
-      "Implementación de Design Thinking como marco de trabajo. Alineación con stakeholders y equipos de desarrollo sobre la importancia del proceso UX completo.",
+      "Entrevistas con usuarios, stakeholders y equipo de desarrollo. Análisis de métricas existentes y revisión de reclamos. Identificación de pain points clave en colaboración con el área de CX del banco.",
   },
   {
     number: "03",
-    title: "Benchmark & Ideación",
+    title: "Benchmark, Ideación y Testeo",
     description:
-      "Análisis competitivo de plataformas bancarias. Propuesta y testeo de soluciones para diferentes segmentos de usuarios empresariales.",
+      "Análisis competitivo de diversas plataformas bancarias y sus funcionalidades para el segmento empresarial. Propuesta y testeo de soluciones con diferentes segmentos de usuarios empresariales.",
   },
   {
     number: "04",
-    title: "Design System & UI",
+    title: "Mejora de Flujos, Design System & UI",
     description:
-      "Adopción del Design System corporativo de Santander. Diseño de interfaces modernas, accesibles y consistentes con el nuevo estándar visual.",
+      "Mejora de flujos y perfilamiento para los diversos segmentos de usuarios. Adopción del Design System corporativo de Santander, diseño de interfaces modernas, accesibles y consistentes con el nuevo estándar visual. ",
   },
   {
     number: "05",
-    title: "Desarrollo & Entrega",
+    title: "Maquetación, Handoff a Desarrollo & Entrega Contínua",
     description:
-      "Desarrollo frontend en Angular. Entrega del dashboard principal y definición de bases para la continuidad del proyecto por múltiples equipos.",
+      "Una vez aprobadas las interfaces de cada flujo, las maqueteaba para entregarlas avanzadas al equipo de desarrollo y así acelerar el proceso. Se definió un MVP y se fueron entregando las funcionalidades por etapas, permitiendo una implementación incremental y eficiente.",
   },
 ];
 
@@ -51,7 +51,7 @@ const carouselImages = [
   "/img/s-ob-car_04.webp",
   "/img/s-ob-car_05.webp",
   "/img/s-ob-car_06.webp",
-  "/img/s-ob-car_07.webp",
+  // "/img/s-ob-car_07.webp",
 ];
 
 const SantanderProject = () => {
@@ -73,19 +73,21 @@ const SantanderProject = () => {
             <ArrowLeft className="w-4 h-4" /> Volver al inicio
           </Link>
 
-          <div className="max-w-3xl">
+          <div className="max-w-5xl">
             <span className="text-xs font-medium text-primary uppercase tracking-widest mb-3 block">
-              Banco Santander · 2021–2023
+              Banco Santander · 2021-2023
             </span>
             <h1 className="font-heading text-4xl md:text-6xl font-bold leading-tight mb-4">
               OfficeBanking
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-3">
-              Transformación de la plataforma para clientes Empresa
+              Transformación completa de la plataforma para clientes segmento empresas de Banco Santander
             </p>
             <div className="flex gap-3 text-sm text-muted-foreground">
               <span className="bg-secondary px-3 py-1 rounded-full">Diseñador UX</span>
-              <span className="bg-secondary px-3 py-1 rounded-full">Frontend Developer</span>
+              <span className="bg-secondary px-3 py-1 rounded-full">Discovery</span>
+              <span className="bg-secondary px-3 py-1 rounded-full">Diseño</span>
+              <span className="bg-secondary px-3 py-1 rounded-full">Frontend</span>
             </div>
           </div>
         </div>
@@ -134,10 +136,10 @@ const SantanderProject = () => {
             <div>
               <h2 className="font-heading text-2xl font-bold mb-4">El Desafío</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Transformar una plataforma con años en el mercado, arquitectura compleja y múltiples funcionalidades, en una solución moderna, intuitiva y accesible.
+                Transformar una plataforma con años en el mercado, arquitectura compleja con importante deuda técnica y múltiples funcionalidades, en una solución moderna, intuitiva y accesible.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                La diversidad de usuarios —desde microempresarios hasta equipos contables de holdings— hacía que un diseño único fuera insuficiente.
+                La diversidad de usuarios, implicaba que la plataforma debía ser capaz de adaptarse a las diferentes necesidades y comportamientos de estos usuarios tan disímiles.
               </p>
             </div>
           </div>
@@ -159,7 +161,7 @@ const SantanderProject = () => {
               <span className="text-xs font-medium text-primary uppercase tracking-widest mb-2 block">Antes</span>
               <h2 className="font-heading text-2xl font-bold mb-4">Plataforma anterior</h2>
               <p className="text-muted-foreground leading-relaxed">
-                La versión previa presentaba una interfaz anticuada con deuda técnica significativa. Santander decidió renovar tanto el stack tecnológico (Angular) como la experiencia de usuario completa.
+                La versión previa presentaba una interfaz anticuada con deuda técnica significativa. Santander decidió renovar tanto el stack tecnológico como la experiencia de usuario completa.
               </p>
             </div>
           </div>
@@ -170,8 +172,8 @@ const SantanderProject = () => {
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">El Proceso</h2>
-          <p className="text-muted-foreground mb-16 max-w-lg">
-            Una metodología completa de Design Thinking aplicada de principio a fin.
+          <p className="text-muted-foreground mb-16">
+            Un proceso End to End desde Discovery hasta implementación en Desarrollo.
           </p>
 
           <div className="space-y-8">
@@ -180,7 +182,7 @@ const SantanderProject = () => {
                 key={step.number}
                 className="group flex gap-6 md:gap-10 p-6 md:p-8 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300"
               >
-                <span className="text-3xl font-heading font-bold text-gradient-primary shrink-0">
+                <span className="text-4xl font-heading font-bold text-gradient-primary shrink-0">
                   {step.number}
                 </span>
                 <div>
@@ -194,7 +196,7 @@ const SantanderProject = () => {
       </section>
 
       {/* Process image */}
-      <section className="pb-16">
+      {/* <section className="pb-16">
         <div className="container mx-auto px-6">
           <div className="rounded-2xl overflow-hidden border border-border">
             <img
@@ -204,14 +206,14 @@ const SantanderProject = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Gallery */}
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Resultados</h2>
-          <p className="text-muted-foreground mb-12 max-w-lg">
-            Pantallas y flujos diseñados para la nueva plataforma OfficeBanking.
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Resultado</h2>
+          <p className="text-muted-foreground mb-12 max-w-4x1">
+            Desde lo técnico se renovo el stack tecnológico y se eliminó la deuda técnica, entregando un producto más estable y escalable, que además pasó a ser la base para la continuidad del proyecto por parte de múltiples equipos para la evolución del resto de los flujos internos. Desde la experiencia de usuario, se logró una plataforma moderna, intuitiva y accesible, que se adapta a las necesidades de los diversos segmentos de clientes empresa.
           </p>
 
           <div className="grid md:grid-cols-2 gap-4">
@@ -234,13 +236,13 @@ const SantanderProject = () => {
           <h2 className="font-heading text-3xl font-bold mb-8">Decisiones Clave</h2>
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              <strong className="text-foreground">Segmentación inteligente:</strong> Identificamos los puntos comunes entre todos los segmentos para responder globalmente, y separamos los flujos específicos para que usuarios que no los necesitaran nunca los vieran.
+              <strong className="text-foreground">Metodología sobre estética:</strong> Argumenté frente a stakeholders de que el proyecto no era "diseñar pantallas", sino redefinir la experiencia completa. Esto permitió un Discovery profundo antes de cualquier diseño visual, lo cual terminó resultando en un proyecto robusto y exitoso que se terminó convirtiendo en la base para la continuidad de la transformación del Office Banking.
             </p>
             <p>
-              <strong className="text-foreground">Metodología sobre decoración:</strong> Convencí a stakeholders de que el proyecto no era "diseñar pantallas", sino redefinir la experiencia completa. Esto permitió un Discovery profundo antes de cualquier diseño visual.
+              <strong className="text-foreground">Segmentación inteligente:</strong> Identificar los puntos comunes entre todos los segmentos para responder globalmente, y perfilar los flujos específicos para que usuarios que no los necesitaran nunca los vieran.
             </p>
             <p>
-              <strong className="text-foreground">Bases escalables:</strong> El dashboard y los lineamientos de diseño sentaron las bases para que múltiples equipos pudieran continuar desarrollando flujos internos de manera consistente.
+              <strong className="text-foreground">Bases escalables:</strong> El login, vista selección perfil empresa, dashboard, etc. se realizaron en base a lineamientos de diseño y desarrollo que sentaron las bases para que múltiples equipos pudieran continuar desarrollando flujos internos de manera consistente.
             </p>
           </div>
         </div>
