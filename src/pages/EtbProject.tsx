@@ -51,7 +51,7 @@ const galleryImages = [
   "/img/n-etb-car_04.webp",
   "/img/n-etb-car_05.webp",
   "/img/n-etb-car_06.webp",
-  "/img/n-etb-car_07.webp",
+  // "/img/n-etb-car_07.webp",
 ];
 
 const EtbProject = () => {
@@ -128,7 +128,7 @@ const EtbProject = () => {
                 ETB es la principal empresa de telecomunicaciones de Bogotá, Colombia. Ofrece servicios de internet (fibra óptica), telefonía fija y móvil, y TV.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                El proyecto fue desarrollado a través de Neoris como socio tecnológico, con el equipo de diseño trabajando de forma remota con contrapartes técnicas en Colombia.
+                El proyecto fue desarrollado a través de Neoris como socio tecnológico, y yo como UX trabajando de forma remota con contrapartes técnicas en Colombia.
               </p>
             </div>
             <div>
@@ -170,7 +170,7 @@ const EtbProject = () => {
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">El Proceso</h2>
-          <p className="text-muted-foreground mb-16 max-w-lg">
+          <p className="text-muted-foreground mb-16 max-w-4x1">
             Investigación profunda y diseño iterativo para un problema de alta complejidad técnica.
           </p>
 
@@ -201,7 +201,7 @@ const EtbProject = () => {
             Pantallas del flujo de validación de cobertura para ETB Colombia.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-4">
             {galleryImages.map((img, i) => (
               <div key={i} className="rounded-xl overflow-hidden border border-border group">
                 <img
@@ -224,10 +224,10 @@ const EtbProject = () => {
               <strong className="text-foreground">Geolocalización primero:</strong> Se priorizó la geolocalización como método principal de ingreso, reduciendo errores y facilitando el proceso para el usuario.
             </p>
             <p>
-              <strong className="text-foreground">Fallback manual intuitivo:</strong> Para casos donde la geolocalización no fuera suficiente, se diseñó un sistema de ingreso manual que guía al usuario paso a paso por el formato colombiano.
+              <strong className="text-foreground">Fallback manual intuitivo:</strong> Para casos donde la geolocalización no fuera suficiente, se diseñó un sistema de ingreso manual que guía al usuario paso a paso.
             </p>
             <p>
-              <strong className="text-foreground">Validación iterativa:</strong> Cada decisión de diseño fue validada con la contraparte técnica en Colombia, asegurando factibilidad y cumplimiento del objetivo de negocio.
+              <strong className="text-foreground">Validación iterativa:</strong> Cada decisión de diseño fue validada con la contraparte técnica, asegurando factibilidad y cumplimiento del objetivo de negocio.
             </p>
           </div>
         </div>

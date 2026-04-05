@@ -10,14 +10,13 @@ const projects = [
     title: "OfficeBanking",
     subtitle: "Banco Santander · 2021–2023",
     description:
-      "Transformación completa de la plataforma empresarial del banco más grande de Chile. Desde discovery hasta implementación frontend.",
+      "Transformación completa de la plataforma para clientes segmento empresas de Banco Santander. Desde Discovery hasta implementación frontend.",
     tags: ["End to End", "Design Thinking", "UX/UI", "Research", "Angular"],
     image: "/img/s-ob_01.webp",
     link: "/proyecto/santander-officebanking",
     metrics: [
       { label: "Duración", value: "2 años" },
-      { label: "Segmentos", value: "5+" },
-    ],
+      { label: "Segmentos", value: "Múltiples" },    ],
     featured: true,
   },
   {
@@ -59,8 +58,8 @@ const Index = () => {
       <section id="proyectos" className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Proyectos Destacados</h2>
-          <p className="text-muted-foreground mb-12 max-w-lg">
-            Algunos Casos que muestran distintas facetas de mi experiencia en diseño y desarrollo de productos digitales.
+          <p className="text-muted-foreground mb-12 ">
+            Algunos casos que muestran distintas facetas de mi experiencia en diseño y desarrollo de productos digitales.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">

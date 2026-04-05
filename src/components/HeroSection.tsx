@@ -33,7 +33,7 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed animate-fade-up opacity-0 stagger-3">
-            UX Desginer con enfoque end-to-end. Desde el discovery hasta el código, creo experiencias que impactan usuarios y cumplen metas de negocio.
+            Senior UX Desginer con enfoque end-to-end. Desde el discovery hasta el código, creo experiencias que impactan usuarios y cumplen metas de negocio.
           </p>
 
           {/* CTA */}
