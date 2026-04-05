@@ -27,8 +27,7 @@ jobs:
 
       - name: Prepare build for deploy
         run: |
-          cp -r dist/* public/img public/pdf public/favicon.ico .
-          rm -rf public
+          cp -r public/img public/pdf public/favicon.ico dist/
 
       - name: Deploy to Cpanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -36,5 +35,5 @@ jobs:
           server: ${{ secrets.CPANEL_HOST }}
           username: ${{ secrets.CPANEL_USER }}
           password: ${{ secrets.CPANEL_PASSWORD }}
-          local-dir: ./
+          local-dir: dist/
           server-dir: /public_html/
