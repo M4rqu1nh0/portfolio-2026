@@ -36,4 +36,5 @@ jobs:
           username: ${{ secrets.CPANEL_USER }}
           password: ${{ secrets.CPANEL_PASSWORD }}
           local-dir: dist/
-          server-dir: /public_html/
+          server-dir: public_html/
+          dangerous-clean-slate: true
