@@ -60,7 +60,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Proyectos Destacados</h2>
           <p className="text-muted-foreground mb-12 max-w-lg">
-            Casos que muestran distintas facetas de mi experiencia en diseño y desarrollo de productos digitales.
+            Algunos Casos que muestran distintas facetas de mi experiencia en diseño y desarrollo de productos digitales.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
