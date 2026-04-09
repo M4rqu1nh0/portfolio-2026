@@ -39,7 +39,7 @@ const HeroSection = () => {
           {/* CTA */}
           <div className="flex items-center justify-center gap-4 mt-10 animate-fade-up opacity-0 stagger-4">
             <a
-              href="/pdf/CV_Marco_Villegas-UX.pdf"
+              href="/pdf/CV-Marco-Villegas-UX-e2e.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="transition duration-300 bg-gradient-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-full hover:bg-gradient-accent transition-opacity shadow-glow"
