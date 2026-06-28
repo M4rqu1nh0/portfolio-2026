@@ -1,4 +1,4 @@
-import { ArrowDown, Mail, Linkedin } from "lucide-react";
+import { ArrowDown, MapPin, Mail, Linkedin } from "lucide-react";
 import { useLang } from "@/i18n/LanguageProvider";
 
 const HeroSection = () => {
@@ -9,53 +9,62 @@ const HeroSection = () => {
       <div className="absolute -top-32 right-0 w-[640px] h-[640px] rounded-full bg-accent/5 blur-[140px] pointer-events-none" />
 
       <div className="container mx-auto px-6 pt-28 pb-20">
-        <div className="max-w-4xl">
-          {/* Identity row */}
-          <div className="flex items-center gap-4 mb-10 animate-fade-up opacity-0 stagger-1">
-            <img
-              src="/img/mvc.webp"
-              alt="Marco Villegas"
-              className="w-16 h-16 rounded-full object-cover border border-border shadow-card"
-            />
-            <span className="text-sm font-medium text-muted-foreground">{t.hero.badge}</span>
-          </div>
+        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
+          {/* Text column */}
+          <div className="order-2 lg:order-1">
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground bg-secondary px-4 py-1.5 rounded-full mb-8 animate-fade-up opacity-0 stagger-1">
+              <MapPin className="w-3.5 h-3.5" />
+              {t.hero.badge}
+            </span>
 
-          {/* Editorial headline */}
-          <h1 className="font-heading text-5xl md:text-7xl font-semibold leading-[1.05] tracking-tight animate-fade-up opacity-0 stagger-2">
-            {t.hero.headingLead}{" "}
-            <em className="not-italic text-gradient-primary md:italic">{t.hero.headingHighlight}</em>
-          </h1>
+            <h1 className="font-heading text-5xl md:text-6xl xl:text-7xl font-semibold leading-[1.05] tracking-tight animate-fade-up opacity-0 stagger-2">
+              {t.hero.headingLead}{" "}
+              <em className="not-italic text-gradient-primary md:italic">{t.hero.headingHighlight}</em>
+            </h1>
 
-          {/* Subtitle */}
-          <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed animate-fade-up opacity-0 stagger-3">
-            {t.hero.subtitle}
-          </p>
+            <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed animate-fade-up opacity-0 stagger-3">
+              {t.hero.subtitle}
+            </p>
 
-          {/* CTA */}
-          <div className="flex flex-wrap items-center gap-4 mt-10 animate-fade-up opacity-0 stagger-4">
-            <a
-              href="/pdf/CV-Marco-Villegas-UX-e2e.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary text-primary-foreground font-medium px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity shadow-card"
-            >
-              {t.hero.downloadCv}
-            </a>
-            <a
-              href="https://www.linkedin.com/in/marcovillegasc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-foreground border border-border hover:border-foreground/40 px-6 py-3.5 rounded-full transition-colors"
-            >
-              <Linkedin className="w-4 h-4" />
-              {t.hero.linkedin}
-            </a>
+            <div className="flex flex-wrap items-center gap-4 mt-10 animate-fade-up opacity-0 stagger-4">
+              <a
+                href="/pdf/CV-Marco-Villegas-UX-e2e.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-primary text-primary-foreground font-medium px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity shadow-card"
+              >
+                {t.hero.downloadCv}
+              </a>
+              <a
+                href="https://www.linkedin.com/in/marcovillegasc/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-foreground border border-border hover:border-foreground/40 px-6 py-3.5 rounded-full transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+                {t.hero.linkedin}
+              </a>
+            </div>
+
             <a
               href="mailto:contacto@mvc-ux.dev"
-              className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors ml-1"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mt-6 animate-fade-up opacity-0 stagger-5"
             >
               <Mail className="w-3.5 h-3.5" /> contacto@mvc-ux.dev
             </a>
+          </div>
+
+          {/* Portrait column */}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-up opacity-0 stagger-2">
+            <div className="relative">
+              {/* Accent glow behind the portrait */}
+              <div className="absolute -inset-4 bg-gradient-primary opacity-15 blur-3xl rounded-full pointer-events-none" />
+              <img
+                src="/img/mvc.webp"
+                alt="Marco Villegas"
+                className="relative w-64 h-80 md:w-80 md:h-[26rem] lg:w-full lg:h-auto lg:aspect-[4/5] object-cover rounded-3xl border border-border shadow-card"
+              />
+            </div>
           </div>
         </div>
 
