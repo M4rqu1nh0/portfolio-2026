@@ -4,6 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NotFound from "@/pages/NotFound";
+import Reveal from "@/components/Reveal";
+import PageTransition from "@/components/PageTransition";
 import { getProjectBySlug } from "@/data/projects";
 import { useLang } from "@/i18n/LanguageProvider";
 
@@ -22,6 +24,7 @@ const ProjectPage = () => {
   }
 
   return (
+    <PageTransition>
     <div className="min-h-screen">
       <Navbar />
 
@@ -139,21 +142,20 @@ const ProjectPage = () => {
           <p className="text-muted-foreground mb-16 max-w-2xl">{project.process.intro}</p>
 
           <div className="space-y-8">
-            {project.process.steps.map((step) => (
-              <div
-                key={step.number}
-                className="group flex gap-6 md:gap-10 p-6 md:p-8 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300"
-              >
-                <span className="text-3xl font-heading font-bold text-gradient-primary shrink-0">
-                  {step.number}
-                </span>
-                <div>
-                  <h3 className="font-heading text-lg font-semibold mb-2">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed max-w-xl">
-                    {step.description}
-                  </p>
+            {project.process.steps.map((step, i) => (
+              <Reveal key={step.number} delay={i * 0.05}>
+                <div className="group flex gap-6 md:gap-10 p-6 md:p-8 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300">
+                  <span className="text-3xl font-heading font-semibold text-gradient-primary shrink-0">
+                    {step.number}
+                  </span>
+                  <div>
+                    <h3 className="font-heading text-lg font-semibold mb-2">{step.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed max-w-xl">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -233,6 +235,7 @@ const ProjectPage = () => {
 
       <Footer />
     </div>
+    </PageTransition>
   );
 };
 

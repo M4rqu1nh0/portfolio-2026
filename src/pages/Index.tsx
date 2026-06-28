@@ -4,6 +4,8 @@ import ProjectCard from "@/components/ProjectCard";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import SkillsSection from "@/components/SkillsSection";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
+import PageTransition from "@/components/PageTransition";
 import { getProjects } from "@/data/projects";
 import { useLang } from "@/i18n/LanguageProvider";
 
@@ -12,9 +14,10 @@ const Index = () => {
   const projects = getProjects(lang);
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <HeroSection />
+    <PageTransition>
+      <div className="min-h-screen">
+        <Navbar />
+        <HeroSection />
 
       {/* Projects */}
       <section id="proyectos" className="py-24 border-t border-border">
@@ -24,27 +27,33 @@ const Index = () => {
           <p className="text-muted-foreground mb-12 max-w-2xl">{t.home.projectsIntro}</p>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((project) => (
-              <ProjectCard
+            {projects.map((project, i) => (
+              <Reveal
                 key={project.slug}
-                title={project.title}
-                subtitle={project.eyebrow}
-                description={project.card.description}
-                tags={project.card.tags}
-                image={project.heroImage}
-                link={localePath(`/proyecto/${project.slug}`)}
-                metrics={project.card.metrics}
-                featured={project.card.featured}
-              />
+                delay={i * 0.08}
+                className={project.card.featured ? "md:col-span-2" : undefined}
+              >
+                <ProjectCard
+                  title={project.title}
+                  subtitle={project.eyebrow}
+                  description={project.card.description}
+                  tags={project.card.tags}
+                  image={project.heroImage}
+                  link={localePath(`/proyecto/${project.slug}`)}
+                  metrics={project.card.metrics}
+                  featured={project.card.featured}
+                />
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <ExperienceTimeline />
-      <SkillsSection />
-      <Footer />
-    </div>
+        <ExperienceTimeline />
+        <SkillsSection />
+        <Footer />
+      </div>
+    </PageTransition>
   );
 };
 

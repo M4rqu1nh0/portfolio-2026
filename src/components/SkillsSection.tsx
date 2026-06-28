@@ -1,5 +1,6 @@
 import { Layers, Code, Users, Search, Palette, MonitorSmartphone } from "lucide-react";
 import { useLang } from "@/i18n/LanguageProvider";
+import Reveal from "@/components/Reveal";
 
 // Icons stay in code, mapped by index to the localized skill items in the dictionary.
 const skillIcons = [Search, Layers, Code, Users, MonitorSmartphone, Palette];
@@ -17,14 +18,13 @@ const SkillsSection = () => {
           {t.skills.items.map((skill, i) => {
             const Icon = skillIcons[i] ?? Layers;
             return (
-              <div
-                key={skill.label}
-                className="group p-6 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300"
-              >
-                <Icon className="w-6 h-6 text-primary mb-3 group-hover:scale-110 transition-transform" />
-                <h3 className="font-heading font-semibold text-sm mb-1">{skill.label}</h3>
-                <p className="text-xs text-muted-foreground">{skill.desc}</p>
-              </div>
+              <Reveal key={skill.label} delay={i * 0.05}>
+                <div className="group h-full p-6 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300">
+                  <Icon className="w-6 h-6 text-primary mb-3 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-heading font-semibold text-sm mb-1">{skill.label}</h3>
+                  <p className="text-xs text-muted-foreground">{skill.desc}</p>
+                </div>
+              </Reveal>
             );
           })}
         </div>
