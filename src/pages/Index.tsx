@@ -19,8 +19,9 @@ const Index = () => {
       {/* Projects */}
       <section id="proyectos" className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">{t.home.projectsTitle}</h2>
-          <p className="text-muted-foreground mb-12 ">{t.home.projectsIntro}</p>
+          <div className="w-12 h-px bg-accent mb-6" />
+          <h2 className="font-heading text-4xl md:text-5xl font-semibold mb-4">{t.home.projectsTitle}</h2>
+          <p className="text-muted-foreground mb-12 max-w-2xl">{t.home.projectsIntro}</p>
 
           <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project) => (

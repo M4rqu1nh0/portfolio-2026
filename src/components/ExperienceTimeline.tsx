@@ -6,8 +6,9 @@ const ExperienceTimeline = () => {
   return (
     <section id="experiencia" className="py-24">
       <div className="container mx-auto px-6">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">{t.experience.title}</h2>
-        <p className="text-muted-foreground mb-16">{t.experience.intro}</p>
+        <div className="w-12 h-px bg-accent mb-6" />
+        <h2 className="font-heading text-4xl md:text-5xl font-semibold mb-4">{t.experience.title}</h2>
+        <p className="text-muted-foreground mb-16 max-w-2xl">{t.experience.intro}</p>
 
         <div className="relative">
           {/* Vertical line */}

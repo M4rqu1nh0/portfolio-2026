@@ -39,7 +39,7 @@ const ProjectPage = () => {
             <span className="text-xs font-medium text-primary uppercase tracking-widest mb-3 block">
               {project.eyebrow}
             </span>
-            <h1 className="font-heading text-4xl md:text-6xl font-bold leading-tight mb-4">
+            <h1 className="font-heading text-5xl md:text-7xl font-semibold leading-[1.05] tracking-tight mb-4">
               {project.title}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-3">
@@ -134,8 +134,9 @@ const ProjectPage = () => {
       {/* Process */}
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">{t.project.process}</h2>
-          <p className="text-muted-foreground mb-16 max-w-lg">{project.process.intro}</p>
+          <div className="w-12 h-px bg-accent mb-6" />
+          <h2 className="font-heading text-4xl md:text-5xl font-semibold mb-4">{t.project.process}</h2>
+          <p className="text-muted-foreground mb-16 max-w-2xl">{project.process.intro}</p>
 
           <div className="space-y-8">
             {project.process.steps.map((step) => (
@@ -176,8 +177,9 @@ const ProjectPage = () => {
       {/* Gallery */}
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">{t.project.results}</h2>
-          <p className="text-muted-foreground mb-12 max-w-lg">{project.gallery.intro}</p>
+          <div className="w-12 h-px bg-accent mb-6" />
+          <h2 className="font-heading text-4xl md:text-5xl font-semibold mb-4">{t.project.results}</h2>
+          <p className="text-muted-foreground mb-12 max-w-2xl">{project.gallery.intro}</p>
 
           <div className="grid md:grid-cols-2 gap-4">
             {project.gallery.images.map((img, i) => (
@@ -210,7 +212,7 @@ const ProjectPage = () => {
       {/* CTA */}
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-heading text-3xl font-bold mb-4">{t.project.ctaTitle}</h2>
+          <h2 className="font-heading text-4xl md:text-5xl font-semibold mb-4">{t.project.ctaTitle}</h2>
           <p className="text-muted-foreground mb-8">{t.project.ctaText}</p>
           <div className="flex items-center justify-center gap-4">
             <a

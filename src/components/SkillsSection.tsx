@@ -9,8 +9,9 @@ const SkillsSection = () => {
   return (
     <section className="py-24 border-t border-border">
       <div className="container mx-auto px-6">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">{t.skills.title}</h2>
-        <p className="text-muted-foreground mb-12 max-w-lg">{t.skills.intro}</p>
+        <div className="w-12 h-px bg-accent mb-6" />
+        <h2 className="font-heading text-4xl md:text-5xl font-semibold mb-4">{t.skills.title}</h2>
+        <p className="text-muted-foreground mb-12 max-w-2xl">{t.skills.intro}</p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {t.skills.items.map((skill, i) => {
