@@ -12,6 +12,17 @@ dist
 dist-ssr
 *.local
 
+# Alternate package managers (project uses npm)
+bun.lock*
+yarn.lock
+pnpm-lock.yaml
+
+# Archives
+*.zip
+
+# Tooling
+.atl
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
