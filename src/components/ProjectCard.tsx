@@ -41,7 +41,7 @@ const ProjectCard = ({ title, subtitle, description, tags, image, link, metrics,
 
         {/* Metrics */}
         {metrics && (
-          <div className="flex gap-6 mb-4">
+          <div className="flex gap-8 mb-4">
             {metrics.map((m) => (
               <div key={m.label}>
                 <p className="text-2xl font-heading font-bold text-gradient-primary">{m.value}</p>

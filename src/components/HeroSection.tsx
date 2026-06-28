@@ -17,7 +17,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main heading */}
-          <div className="grid auto-cols-max grid-flow-col">
+          <div className="flex flex-col items-center gap-6 md:flex-row md:justify-center md:gap-10">
             <figure className="mr-[32px] animate-fade-up opacity-0 stagger-1 border-2 border-white rounded-full flex items-center justify-center">
               <img src="/img/mvc.webp" alt="Marco Villegas" className="rounded-full w-64 h-64 mx-auto object-cover" />
             </figure>
@@ -33,13 +33,13 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed animate-fade-up opacity-0 stagger-3">
-            UX Desginer con enfoque end-to-end. Desde el discovery hasta el código, creo experiencias que impactan usuarios y cumplen metas de negocio.
+            Senior UX Desginer con enfoque end-to-end. Desde el discovery hasta el código, creo experiencias que impactan usuarios y cumplen metas de negocio.
           </p>
 
           {/* CTA */}
           <div className="flex items-center justify-center gap-4 mt-10 animate-fade-up opacity-0 stagger-4">
             <a
-              href="/pdf/CV_Marco_Villegas-UX.pdf"
+              href="/pdf/CV-Marco-Villegas-UX-e2e.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="transition duration-300 bg-gradient-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-full hover:bg-gradient-accent transition-opacity shadow-glow"

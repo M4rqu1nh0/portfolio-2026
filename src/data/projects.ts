@@ -59,13 +59,13 @@ export const projects: ProjectDetail[] = [
     slug: "santander-officebanking",
     eyebrow: "Banco Santander · 2021–2023",
     title: "OfficeBanking",
-    subtitle: "Transformación de la plataforma para clientes Empresa",
-    roles: ["Diseñador UX", "Frontend Developer"],
+    subtitle: "Transformación completa de la plataforma para clientes segmento empresas de Banco Santander",
+    roles: ["Diseñador UX", "Discovery", "Diseño", "Frontend"],
     heroImage: "/img/s-ob_01.webp",
     heroAlt: "OfficeBanking - Nueva plataforma",
     metrics: [
       { value: "2 años", label: "Duración del proyecto" },
-      { value: "5+", label: "Segmentos de clientes" },
+      { value: "Múltiples", label: "Segmentos de clientes" },
       { value: "100%", label: "Renovación visual" },
       { value: "Angular", label: "Stack tecnológico" },
     ],
@@ -74,8 +74,8 @@ export const projects: ProjectDetail[] = [
       "Este segmento incluye desde pequeños negocios hasta los holdings más grandes del país, todos transaccionando desde una misma plataforma: OfficeBanking.",
     ],
     challenge: [
-      "Transformar una plataforma con años en el mercado, arquitectura compleja y múltiples funcionalidades, en una solución moderna, intuitiva y accesible.",
-      "La diversidad de usuarios —desde microempresarios hasta equipos contables de holdings— hacía que un diseño único fuera insuficiente.",
+      "Transformar una plataforma con años en el mercado, arquitectura compleja con importante deuda técnica y múltiples funcionalidades, en una solución moderna, intuitiva y accesible.",
+      "La diversidad de usuarios, implicaba que la plataforma debía ser capaz de adaptarse a las diferentes necesidades y comportamientos de estos usuarios tan disímiles.",
     ],
     feature: {
       image: "/img/s-ob_02.webp",
@@ -83,46 +83,46 @@ export const projects: ProjectDetail[] = [
       eyebrow: "Antes",
       title: "Plataforma anterior",
       paragraph:
-        "La versión previa presentaba una interfaz anticuada con deuda técnica significativa. Santander decidió renovar tanto el stack tecnológico (Angular) como la experiencia de usuario completa.",
+        "La versión previa presentaba una interfaz anticuada con deuda técnica significativa. Santander decidió renovar tanto el stack tecnológico como la experiencia de usuario completa.",
     },
     process: {
-      intro: "Una metodología completa de Design Thinking aplicada de principio a fin.",
+      intro: "Un proceso End to End desde Discovery hasta implementación en Desarrollo.",
       steps: [
         {
           number: "01",
-          title: "Discovery & Research",
+          title: "Definición de Metodología",
           description:
-            "Entrevistas con usuarios, análisis de métricas existentes y revisión de reclamos. Identificación de pain points clave en colaboración con el área de CX del banco.",
+            "Implementación de Design Thinking como marco de trabajo para el proceso inicial. Alineación con stakeholders y equipo de desarrollo sobre la importancia del proceso UX completo para este proyecto tan amplio y complejo.",
         },
         {
           number: "02",
-          title: "Definición de Metodología",
+          title: "Discovery & Research",
           description:
-            "Implementación de Design Thinking como marco de trabajo. Alineación con stakeholders y equipos de desarrollo sobre la importancia del proceso UX completo.",
+            "Entrevistas con usuarios, stakeholders y equipo de desarrollo. Análisis de métricas existentes y revisión de reclamos. Identificación de pain points clave en colaboración con el área de CX del banco.",
         },
         {
           number: "03",
-          title: "Benchmark & Ideación",
+          title: "Benchmark, Ideación y Testeo",
           description:
-            "Análisis competitivo de plataformas bancarias. Propuesta y testeo de soluciones para diferentes segmentos de usuarios empresariales.",
+            "Análisis competitivo de diversas plataformas bancarias y sus funcionalidades para el segmento empresarial. Propuesta y testeo de soluciones con diferentes segmentos de usuarios empresariales.",
         },
         {
           number: "04",
-          title: "Design System & UI",
+          title: "Mejora de Flujos, Design System & UI",
           description:
-            "Adopción del Design System corporativo de Santander. Diseño de interfaces modernas, accesibles y consistentes con el nuevo estándar visual.",
+            "Mejora de flujos y perfilamiento para los diversos segmentos de usuarios. Adopción del Design System corporativo de Santander, diseño de interfaces modernas, accesibles y consistentes con el nuevo estándar visual.",
         },
         {
           number: "05",
-          title: "Desarrollo & Entrega",
+          title: "Maquetación, Handoff a Desarrollo & Entrega Contínua",
           description:
-            "Desarrollo frontend en Angular. Entrega del dashboard principal y definición de bases para la continuidad del proyecto por múltiples equipos.",
+            "Una vez aprobadas las interfaces de cada flujo, las maqueteaba para entregarlas avanzadas al equipo de desarrollo y así acelerar el proceso. Se definió un MVP y se fueron entregando las funcionalidades por etapas, permitiendo una implementación incremental y eficiente.",
         },
       ],
-      image: { src: "/img/s-ob_03.webp", alt: "Proceso de diseño" },
     },
     gallery: {
-      intro: "Pantallas y flujos diseñados para la nueva plataforma OfficeBanking.",
+      intro:
+        "Desde lo técnico se renovó el stack tecnológico y se eliminó la deuda técnica, entregando un producto más estable y escalable, que además pasó a ser la base para la continuidad del proyecto por parte de múltiples equipos para la evolución del resto de los flujos internos. Desde la experiencia de usuario, se logró una plataforma moderna, intuitiva y accesible, que se adapta a las necesidades de los diversos segmentos de clientes empresa.",
       images: [
         "/img/s-ob-car_01.webp",
         "/img/s-ob-car_02.webp",
@@ -130,23 +130,22 @@ export const projects: ProjectDetail[] = [
         "/img/s-ob-car_04.webp",
         "/img/s-ob-car_05.webp",
         "/img/s-ob-car_06.webp",
-        "/img/s-ob-car_07.webp",
       ],
     },
     outcomes: {
       title: "Decisiones Clave",
       items: [
         {
-          label: "Segmentación inteligente:",
-          text: "Identificamos los puntos comunes entre todos los segmentos para responder globalmente, y separamos los flujos específicos para que usuarios que no los necesitaran nunca los vieran.",
+          label: "Metodología sobre estética:",
+          text: 'Argumenté frente a stakeholders de que el proyecto no era "diseñar pantallas", sino redefinir la experiencia completa. Esto permitió un Discovery profundo antes de cualquier diseño visual, lo cual terminó resultando en un proyecto robusto y exitoso que se terminó convirtiendo en la base para la continuidad de la transformación del Office Banking.',
         },
         {
-          label: "Metodología sobre decoración:",
-          text: 'Convencí a stakeholders de que el proyecto no era "diseñar pantallas", sino redefinir la experiencia completa. Esto permitió un Discovery profundo antes de cualquier diseño visual.',
+          label: "Segmentación inteligente:",
+          text: "Identificar los puntos comunes entre todos los segmentos para responder globalmente, y perfilar los flujos específicos para que usuarios que no los necesitaran nunca los vieran.",
         },
         {
           label: "Bases escalables:",
-          text: "El dashboard y los lineamientos de diseño sentaron las bases para que múltiples equipos pudieran continuar desarrollando flujos internos de manera consistente.",
+          text: "El login, vista selección perfil empresa, dashboard, etc. se realizaron en base a lineamientos de diseño y desarrollo que sentaron las bases para que múltiples equipos pudieran continuar desarrollando flujos internos de manera consistente.",
         },
       ],
     },
@@ -156,22 +155,22 @@ export const projects: ProjectDetail[] = [
     eyebrow: "Marsol S.A. · 2024–2025",
     title: "Aibomarket",
     subtitle: "Marketplace gastronómico multimarca B2B",
-    roles: ["Frontend Developer", "UX/UI"],
+    roles: ["UX/UI Designer", "Frontend"],
     heroImage: "/img/aibo_01.webp",
     heroAlt: "Aibomarket - Marketplace gastronómico",
     metrics: [
-      { value: "1 año", label: "Duración del proyecto" },
-      { value: "Multi", label: "Marcas soportadas" },
-      { value: "NextJS", label: "Stack tecnológico" },
+      { value: "2 años", label: "de participación" },
+      { value: "Figma", label: "Diseño y Prototipado" },
+      { value: "NextJS", label: "Frontend Framework" },
       { value: "B2B", label: "Modelo de negocio" },
     ],
     context: [
       "Aibomarket es un marketplace gastronómico cuyo foco principal es la venta en línea de equipamiento, suministros y servicios para negocios del área gastronómica.",
-      "Además es una solución multimarca que permite la administración y customización de los componentes para cada una de las marcas asociadas.",
+      "Además, evolucionó para convertirse en una solución multimarca que permite la administración y customización de los componentes para cada una de las marcas asociadas.",
     ],
     challenge: [
-      "Implementar mejoras de diseño y nuevos flujos de forma rápida y eficiente, en un contexto donde el producto debía escalar a múltiples marcas.",
-      "Reducir la distancia entre diseño y producción, permitiendo que las decisiones de UX se reflejaran en el producto final con el menor retrabajo posible.",
+      "Junto al UX Lead implementar mejoras de diseño y nuevos flujos de forma rápida y eficiente, en un contexto donde el producto debía escalar a múltiples marcas.",
+      "Reducir la fricción entre diseño y producción, colaborando con la implementación de las mejoras de diseño en el aplicativo, formando parte del equipo de frontend, de ésta forma las decisiones de UX se reflejaran en el producto final rápidamente y con el menor retrabajo posible.",
     ],
     feature: {
       image: "/img/aibo_02.webp",
@@ -179,7 +178,7 @@ export const projects: ProjectDetail[] = [
       eyebrow: "Multimarca",
       title: "Componentes escalables",
       paragraph:
-        "El producto se volvió multimarca y los componentes debían poder estilarse según cada una de ellas, manteniendo consistencia visual y experiencia de usuario coherente en todos los casos.",
+        "El producto se volvió multimarca y los componentes debían poder estilarse según cada una de ellas, manteniendo consistencia visual y experiencia de usuario coherente en todos los casos. Lo cual significó un desafío adicional, ya que no solo se trataba de diseñar y desarrollar componentes, sino de hacerlo pensando en su adaptabilidad y escalabilidad para múltiples marcas sin duplicar código sino que customizándolos a partir de clases, de manera tal que la funcionalidad estaba separada del estilo.",
     },
     process: {
       intro: "Colaboración estrecha entre diseño y desarrollo para lograr entregas rápidas y consistentes.",
@@ -206,13 +205,13 @@ export const projects: ProjectDetail[] = [
           number: "04",
           title: "Desarrollo Frontend",
           description:
-            "Desarrollo de vistas, landings internas y componentes en NextJS, estructurando en HTML5 y SASS, cuidando consistencia, mantenibilidad y performance.",
+            "Desarrollo de vistas, landings internas y componentes en NextJS, estructurando en HTML5 y SASS, cuidando consistencia, mantenibilidad y performance. Uso de IA para optimizar tiempos de desarrollo.",
         },
         {
           number: "05",
-          title: "Responsive & QA",
+          title: "Responsive & UX QA",
           description:
-            "Validación constante de responsive design, asegurando una experiencia sólida en todos los dispositivos. Uso de IA para optimizar tiempos de desarrollo.",
+            "Validación constante de responsive design y soporte multinavegador, asegurando una experiencia sólida en todos los dispositivos.",
         },
       ],
       image: { src: "/img/aibo_03.webp", alt: "Proceso de diseño Aibomarket" },
@@ -222,11 +221,10 @@ export const projects: ProjectDetail[] = [
       images: [
         "/img/aibo-car_01.webp",
         "/img/aibo-car_02.webp",
+        "/img/aibo-car_07.webp",
         "/img/aibo-car_03.webp",
         "/img/aibo-car_04.webp",
-        "/img/aibo-car_05.webp",
         "/img/aibo-car_06.webp",
-        "/img/aibo-car_07.webp",
       ],
     },
     outcomes: {
@@ -252,7 +250,7 @@ export const projects: ProjectDetail[] = [
     eyebrow: "Neoris · 2023",
     title: "WeGrow",
     subtitle: "Herramienta interna de evaluación, feedback y desarrollo profesional",
-    roles: ["Diseñador UX", "Trabajo Colaborativo"],
+    roles: ["Diseñador UX", "Proyecto Interno", "Trabajo Colaborativo"],
     heroImage: "/img/n-wg_01.webp",
     heroAlt: "WeGrow - Plataforma de feedback",
     metrics: [
@@ -275,10 +273,10 @@ export const projects: ProjectDetail[] = [
       eyebrow: "Dashboard",
       title: "Vista general",
       paragraph:
-        "El dashboard central permite a cada usuario visualizar su estado de evaluación, feedback pendiente y progreso profesional de manera clara y accesible.",
+        "El dashboard central permite a cada usuario visualizar su estado en cuanto a evaluaciones por realizar, feedback recibido y progreso profesional de manera clara y accesible.",
     },
     process: {
-      intro: "Coordinación ágil entre equipos distribuidos para entregar un MVP de alta complejidad.",
+      intro: "Coordinación ágil entre equipos distribuidos para entregar un MVP que cumpla con las necesidades de un proyecto de alta complejidad.",
       steps: [
         {
           number: "01",
@@ -319,7 +317,6 @@ export const projects: ProjectDetail[] = [
         "/img/n-wg-car_02.webp",
         "/img/n-wg-car_03.webp",
         "/img/n-wg-car_04.webp",
-        "/img/n-wg-car_05.webp",
         "/img/n-wg-car_06.webp",
         "/img/n-wg-car_07.webp",
       ],
@@ -358,7 +355,7 @@ export const projects: ProjectDetail[] = [
     ],
     context: [
       "ETB es la principal empresa de telecomunicaciones de Bogotá, Colombia. Ofrece servicios de internet (fibra óptica), telefonía fija y móvil, y TV.",
-      "El proyecto fue desarrollado a través de Neoris como socio tecnológico, con el equipo de diseño trabajando de forma remota con contrapartes técnicas en Colombia.",
+      "El proyecto fue desarrollado a través de Neoris como socio tecnológico, y yo como UX trabajando de forma remota con contrapartes técnicas en Colombia.",
     ],
     challenge: [
       "Redefinir el flujo de autovalidación de cobertura para potenciales clientes de fibra óptica en Bogotá, donde las direcciones tienen un formato particular y complejo.",
@@ -416,7 +413,6 @@ export const projects: ProjectDetail[] = [
         "/img/n-etb-car_04.webp",
         "/img/n-etb-car_05.webp",
         "/img/n-etb-car_06.webp",
-        "/img/n-etb-car_07.webp",
       ],
     },
     outcomes: {
@@ -428,11 +424,11 @@ export const projects: ProjectDetail[] = [
         },
         {
           label: "Fallback manual intuitivo:",
-          text: "Para casos donde la geolocalización no fuera suficiente, se diseñó un sistema de ingreso manual que guía al usuario paso a paso por el formato colombiano.",
+          text: "Para casos donde la geolocalización no fuera suficiente, se diseñó un sistema de ingreso manual que guía al usuario paso a paso.",
         },
         {
           label: "Validación iterativa:",
-          text: "Cada decisión de diseño fue validada con la contraparte técnica en Colombia, asegurando factibilidad y cumplimiento del objetivo de negocio.",
+          text: "Cada decisión de diseño fue validada con la contraparte técnica, asegurando factibilidad y cumplimiento del objetivo de negocio.",
         },
       ],
     },

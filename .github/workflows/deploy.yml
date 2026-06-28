@@ -25,15 +25,17 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Copy public assets
-        run: cp -r public/img public/pdf public/favicon.ico dist/
+      - name: Prepare build for deploy
+        run: |
+          cp -r public/img public/pdf public/img/favicon.png dist/
 
       - name: Deploy to Cpanel
-        uses: easingthemes/sftp-deploy@v2.2.8
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.CPANEL_HOST }}
-          port: 21
           username: ${{ secrets.CPANEL_USER }}
           password: ${{ secrets.CPANEL_PASSWORD }}
-          localDir: dist
-          remoteDir: /public_html
+          local-dir: dist/
+          #server-dir: ./public_html/
+          server-dir: /
+          dangerous-clean-slate: true
