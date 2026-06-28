@@ -17,6 +17,13 @@ describe("projects data", () => {
       expect(project.gallery.images.length).toBeGreaterThan(0);
     }
   });
+
+  it("every project has a home card summary with description and tags", () => {
+    for (const project of projects) {
+      expect(project.card.description.length).toBeGreaterThan(0);
+      expect(project.card.tags.length).toBeGreaterThan(0);
+    }
+  });
 });
 
 describe("getProjectBySlug", () => {
