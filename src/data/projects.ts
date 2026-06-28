@@ -1,3 +1,6 @@
+import type { Lang } from "@/i18n/types";
+import { projectsEn } from "./projects.en";
+
 export interface Metric {
   value: string;
   label: string;
@@ -59,6 +62,27 @@ export interface ProjectDetail {
     title: string;
     items: KeyDecision[];
   };
+}
+
+/**
+ * Translatable text fields of a project, keyed by slug in projects.en.ts.
+ * Structural fields (slug, images, step numbers, featured flag) are NOT here —
+ * they live once in the Spanish source below and are shared across languages.
+ */
+export interface ProjectTranslation {
+  title?: string;
+  eyebrow?: string;
+  heroAlt?: string;
+  subtitle: string;
+  roles: string[];
+  metrics: Metric[];
+  card: { description: string; tags: string[]; metrics?: Metric[] };
+  context: string[];
+  challenge: string[];
+  feature: { imageAlt?: string; eyebrow: string; title: string; paragraph: string };
+  process: { intro: string; steps: { title: string; description: string }[] };
+  gallery: { intro: string };
+  outcomes: { title: string; items: { label: string; text: string }[] };
 }
 
 export const projects: ProjectDetail[] = [
@@ -467,6 +491,64 @@ export const projects: ProjectDetail[] = [
   },
 ];
 
-export function getProjectBySlug(slug: string | undefined): ProjectDetail | undefined {
-  return projects.find((project) => project.slug === slug);
+/** Overlays the English translation onto the Spanish base, keeping structural fields shared. */
+function mergeProject(base: ProjectDetail, t: ProjectTranslation): ProjectDetail {
+  return {
+    ...base,
+    title: t.title ?? base.title,
+    eyebrow: t.eyebrow ?? base.eyebrow,
+    heroAlt: t.heroAlt ?? base.heroAlt,
+    subtitle: t.subtitle,
+    roles: t.roles,
+    metrics: base.metrics.map((m, i) => ({ ...m, ...t.metrics[i] })),
+    card: {
+      ...base.card,
+      description: t.card.description,
+      tags: t.card.tags,
+      metrics: t.card.metrics ?? base.card.metrics,
+    },
+    context: t.context,
+    challenge: t.challenge,
+    feature: {
+      ...base.feature,
+      imageAlt: t.feature.imageAlt ?? base.feature.imageAlt,
+      eyebrow: t.feature.eyebrow,
+      title: t.feature.title,
+      paragraph: t.feature.paragraph,
+    },
+    process: {
+      ...base.process,
+      intro: t.process.intro,
+      steps: base.process.steps.map((s, i) => ({
+        ...s,
+        title: t.process.steps[i].title,
+        description: t.process.steps[i].description,
+      })),
+    },
+    gallery: { ...base.gallery, intro: t.gallery.intro },
+    outcomes: {
+      title: t.outcomes.title,
+      items: base.outcomes.items.map((item, i) => ({
+        ...item,
+        label: t.outcomes.items[i].label,
+        text: t.outcomes.items[i].text,
+      })),
+    },
+  };
+}
+
+function localize(base: ProjectDetail, lang: Lang): ProjectDetail {
+  if (lang === "es") return base;
+  const translation = projectsEn[base.slug];
+  return translation ? mergeProject(base, translation) : base;
+}
+
+/** All projects in the requested language (Spanish is the source of truth). */
+export function getProjects(lang: Lang = "es"): ProjectDetail[] {
+  return projects.map((project) => localize(project, lang));
+}
+
+export function getProjectBySlug(slug: string | undefined, lang: Lang = "es"): ProjectDetail | undefined {
+  const base = projects.find((project) => project.slug === slug);
+  return base ? localize(base, lang) : undefined;
 }

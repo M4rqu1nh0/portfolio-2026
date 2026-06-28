@@ -4,9 +4,13 @@ import ProjectCard from "@/components/ProjectCard";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import SkillsSection from "@/components/SkillsSection";
 import Footer from "@/components/Footer";
-import { projects } from "@/data/projects";
+import { getProjects } from "@/data/projects";
+import { useLang } from "@/i18n/LanguageProvider";
 
 const Index = () => {
+  const { lang, t, localePath } = useLang();
+  const projects = getProjects(lang);
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -15,10 +19,8 @@ const Index = () => {
       {/* Projects */}
       <section id="proyectos" className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Proyectos Destacados</h2>
-          <p className="text-muted-foreground mb-12 ">
-            Algunos casos que muestran distintas facetas de mi experiencia en diseño y desarrollo de productos digitales.
-          </p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">{t.home.projectsTitle}</h2>
+          <p className="text-muted-foreground mb-12 ">{t.home.projectsIntro}</p>
 
           <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project) => (
@@ -29,7 +31,7 @@ const Index = () => {
                 description={project.card.description}
                 tags={project.card.tags}
                 image={project.heroImage}
-                link={`/proyecto/${project.slug}`}
+                link={localePath(`/proyecto/${project.slug}`)}
                 metrics={project.card.metrics}
                 featured={project.card.featured}
               />

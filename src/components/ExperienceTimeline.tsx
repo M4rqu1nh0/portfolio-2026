@@ -1,50 +1,13 @@
-const experiences = [
-  {
-    role: "Senior UX",
-    company: "Zenta Group",
-    period: "2025 - 2026",
-    description: "Proyecto a honorarios por 3 meses para Discovery en cliente (COPEC)",
-  },
-  {
-    role: "FrontEnd / UX",
-    company: "Aibomarket.com",
-    period: "2024 - 2025",
-    description: "Marketplace gastronómico B2B. Frontend con NextJS y colaboración en definición UX.",
-  },
-  {
-    role: "Líder Técnico UX · UX/UI · Frontend",
-    company: "NEORIS",
-    period: "2016 - 2023",
-    description: "Consultoría internacional. Proyectos para Banco Santander, BUPA, ETB Colombia. Lideré área UX en Chile, Perú y Colombia.",
-  },
-  {
-    role: "Desarrollador Web",
-    company: "Filiales Chilquinta",
-    period: "2008 - 2015",
-    description: "Gestión de sitios web de 4 filiales. Desarrollo frontend, contenido multimedia y campañas.",
-  },
-  {
-    role: "Desarrollador Web y Multimedia",
-    company: "San Francisco Lodge",
-    period: "2006 - 2008",
-    description: "Desarrollo web, CDs multimedia y atención digital para hotel de montaña.",
-  },
-  {
-    role: "Desarrollador Multimedia y Web",
-    company: "Mito Consultores",
-    period: "2000 - 2006",
-    description: "Módulos interactivos EducActiva, CDs multimedia y sitios web corporativos.",
-  },
-];
+import { useLang } from "@/i18n/LanguageProvider";
 
 const ExperienceTimeline = () => {
+  const { t } = useLang();
+  const experiences = t.experience.items;
   return (
     <section id="experiencia" className="py-24">
       <div className="container mx-auto px-6">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Experiencia</h2>
-        <p className="text-muted-foreground mb-16">
-          Más de dos décadas construyendo productos digitales en consultoría, banca y tecnología.
-        </p>
+        <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">{t.experience.title}</h2>
+        <p className="text-muted-foreground mb-16">{t.experience.intro}</p>
 
         <div className="relative">
           {/* Vertical line */}
