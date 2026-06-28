@@ -5,10 +5,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NotFound from "@/pages/NotFound";
 import { getProjectBySlug } from "@/data/projects";
+import { useLang } from "@/i18n/LanguageProvider";
 
 const ProjectPage = () => {
   const { slug } = useParams();
-  const project = getProjectBySlug(slug);
+  const { lang, t, localePath } = useLang();
+  const project = getProjectBySlug(slug, lang);
+  const homeHash = `${localePath("/")}#proyectos`;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,10 +29,10 @@ const ProjectPage = () => {
       <section className="pt-28 pb-16">
         <div className="container mx-auto px-6">
           <Link
-            to="/#proyectos"
+            to={homeHash}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
           >
-            <ArrowLeft className="w-4 h-4" /> Volver al inicio
+            <ArrowLeft className="w-4 h-4" /> {t.project.backToHome}
           </Link>
 
           <div className="max-w-3xl">
@@ -81,7 +84,7 @@ const ProjectPage = () => {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <h2 className="font-heading text-2xl font-bold mb-4">El Contexto</h2>
+              <h2 className="font-heading text-2xl font-bold mb-4">{t.project.context}</h2>
               {project.context.map((paragraph, i) => (
                 <p
                   key={i}
@@ -94,7 +97,7 @@ const ProjectPage = () => {
               ))}
             </div>
             <div>
-              <h2 className="font-heading text-2xl font-bold mb-4">El Desafío</h2>
+              <h2 className="font-heading text-2xl font-bold mb-4">{t.project.challenge}</h2>
               {project.challenge.map((paragraph, i) => (
                 <p
                   key={i}
@@ -131,7 +134,7 @@ const ProjectPage = () => {
       {/* Process */}
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">El Proceso</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">{t.project.process}</h2>
           <p className="text-muted-foreground mb-16 max-w-lg">{project.process.intro}</p>
 
           <div className="space-y-8">
@@ -173,7 +176,7 @@ const ProjectPage = () => {
       {/* Gallery */}
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Resultados</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">{t.project.results}</h2>
           <p className="text-muted-foreground mb-12 max-w-lg">{project.gallery.intro}</p>
 
           <div className="grid md:grid-cols-2 gap-4">
@@ -181,7 +184,7 @@ const ProjectPage = () => {
               <div key={img} className="rounded-xl overflow-hidden border border-border group">
                 <img
                   src={img}
-                  alt={`${project.title} pantalla ${i + 1}`}
+                  alt={`${project.title} ${t.project.screen} ${i + 1}`}
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -207,22 +210,20 @@ const ProjectPage = () => {
       {/* CTA */}
       <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-heading text-3xl font-bold mb-4">¿Hablamos?</h2>
-          <p className="text-muted-foreground mb-8">
-            Me encantaría contarte más sobre este y otros proyectos.
-          </p>
+          <h2 className="font-heading text-3xl font-bold mb-4">{t.project.ctaTitle}</h2>
+          <p className="text-muted-foreground mb-8">{t.project.ctaText}</p>
           <div className="flex items-center justify-center gap-4">
             <a
               href="mailto:contacto@mvc-ux.dev"
               className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity shadow-glow"
             >
-              Contactar
+              {t.project.ctaContact}
             </a>
             <Link
-              to="/#proyectos"
+              to={homeHash}
               className="text-muted-foreground hover:text-foreground border border-border px-6 py-3.5 rounded-full transition-colors"
             >
-              Ver más proyectos
+              {t.project.ctaMoreProjects}
             </Link>
           </div>
         </div>

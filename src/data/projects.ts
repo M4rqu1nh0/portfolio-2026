@@ -1,3 +1,6 @@
+import type { Lang } from "@/i18n/types";
+import { projectsEn } from "./projects.en";
+
 export interface Metric {
   value: string;
   label: string;
@@ -25,6 +28,13 @@ export interface ProjectDetail {
   heroImage: string;
   heroAlt: string;
   metrics: Metric[];
+  /** Summary shown on the home page project card */
+  card: {
+    description: string;
+    tags: string[];
+    featured?: boolean;
+    metrics?: Metric[];
+  };
   /** "El Contexto" paragraphs */
   context: string[];
   /** "El Desafío" paragraphs */
@@ -54,6 +64,27 @@ export interface ProjectDetail {
   };
 }
 
+/**
+ * Translatable text fields of a project, keyed by slug in projects.en.ts.
+ * Structural fields (slug, images, step numbers, featured flag) are NOT here —
+ * they live once in the Spanish source below and are shared across languages.
+ */
+export interface ProjectTranslation {
+  title?: string;
+  eyebrow?: string;
+  heroAlt?: string;
+  subtitle: string;
+  roles: string[];
+  metrics: Metric[];
+  card: { description: string; tags: string[]; metrics?: Metric[] };
+  context: string[];
+  challenge: string[];
+  feature: { imageAlt?: string; eyebrow: string; title: string; paragraph: string };
+  process: { intro: string; steps: { title: string; description: string }[] };
+  gallery: { intro: string };
+  outcomes: { title: string; items: { label: string; text: string }[] };
+}
+
 export const projects: ProjectDetail[] = [
   {
     slug: "santander-officebanking",
@@ -63,6 +94,16 @@ export const projects: ProjectDetail[] = [
     roles: ["Diseñador UX", "Discovery", "Diseño", "Frontend"],
     heroImage: "/img/s-ob_01.webp",
     heroAlt: "OfficeBanking - Nueva plataforma",
+    card: {
+      description:
+        "Transformación completa de la plataforma para clientes segmento empresas de Banco Santander. Desde Discovery hasta implementación frontend.",
+      tags: ["End to End", "Design Thinking", "UX/UI", "Research", "Angular"],
+      featured: true,
+      metrics: [
+        { value: "2 años", label: "Duración" },
+        { value: "Múltiples", label: "Segmentos" },
+      ],
+    },
     metrics: [
       { value: "2 años", label: "Duración del proyecto" },
       { value: "Múltiples", label: "Segmentos de clientes" },
@@ -158,6 +199,11 @@ export const projects: ProjectDetail[] = [
     roles: ["UX/UI Designer", "Frontend"],
     heroImage: "/img/aibo_01.webp",
     heroAlt: "Aibomarket - Marketplace gastronómico",
+    card: {
+      description:
+        "Marketplace gastronómico B2B. Desarrollo frontend con NextJS y definición UX colaborativa.",
+      tags: ["UX/UI", "NextJS", "Figma", "Multimarca"],
+    },
     metrics: [
       { value: "2 años", label: "de participación" },
       { value: "Figma", label: "Diseño y Prototipado" },
@@ -253,6 +299,11 @@ export const projects: ProjectDetail[] = [
     roles: ["Diseñador UX", "Proyecto Interno", "Trabajo Colaborativo"],
     heroImage: "/img/n-wg_01.webp",
     heroAlt: "WeGrow - Plataforma de feedback",
+    card: {
+      description:
+        "Plataforma de gestión de feedback corporativo con enfoque colaborativo para equipos distribuidos.",
+      tags: ["UX/UI", "Figma", "Colaborativo"],
+    },
     metrics: [
       { value: "MVP", label: "Tipo de entrega" },
       { value: "México", label: "Equipo distribuido" },
@@ -347,6 +398,11 @@ export const projects: ProjectDetail[] = [
     roles: ["Diseñador UX", "Negocio"],
     heroImage: "/img/n-etb_01.webp",
     heroAlt: "ETB - Validación de Cobertura",
+    card: {
+      description:
+        "Autovalidación de cobertura de fibra óptica para la principal operadora de telecomunicaciones de Bogotá.",
+      tags: ["UX/UI", "Figma", "Negocio"],
+    },
     metrics: [
       { value: "Bogotá", label: "Ubicación del cliente" },
       { value: "Fibra", label: "Producto principal" },
@@ -435,6 +491,64 @@ export const projects: ProjectDetail[] = [
   },
 ];
 
-export function getProjectBySlug(slug: string | undefined): ProjectDetail | undefined {
-  return projects.find((project) => project.slug === slug);
+/** Overlays the English translation onto the Spanish base, keeping structural fields shared. */
+function mergeProject(base: ProjectDetail, t: ProjectTranslation): ProjectDetail {
+  return {
+    ...base,
+    title: t.title ?? base.title,
+    eyebrow: t.eyebrow ?? base.eyebrow,
+    heroAlt: t.heroAlt ?? base.heroAlt,
+    subtitle: t.subtitle,
+    roles: t.roles,
+    metrics: base.metrics.map((m, i) => ({ ...m, ...t.metrics[i] })),
+    card: {
+      ...base.card,
+      description: t.card.description,
+      tags: t.card.tags,
+      metrics: t.card.metrics ?? base.card.metrics,
+    },
+    context: t.context,
+    challenge: t.challenge,
+    feature: {
+      ...base.feature,
+      imageAlt: t.feature.imageAlt ?? base.feature.imageAlt,
+      eyebrow: t.feature.eyebrow,
+      title: t.feature.title,
+      paragraph: t.feature.paragraph,
+    },
+    process: {
+      ...base.process,
+      intro: t.process.intro,
+      steps: base.process.steps.map((s, i) => ({
+        ...s,
+        title: t.process.steps[i].title,
+        description: t.process.steps[i].description,
+      })),
+    },
+    gallery: { ...base.gallery, intro: t.gallery.intro },
+    outcomes: {
+      title: t.outcomes.title,
+      items: base.outcomes.items.map((item, i) => ({
+        ...item,
+        label: t.outcomes.items[i].label,
+        text: t.outcomes.items[i].text,
+      })),
+    },
+  };
+}
+
+function localize(base: ProjectDetail, lang: Lang): ProjectDetail {
+  if (lang === "es") return base;
+  const translation = projectsEn[base.slug];
+  return translation ? mergeProject(base, translation) : base;
+}
+
+/** All projects in the requested language (Spanish is the source of truth). */
+export function getProjects(lang: Lang = "es"): ProjectDetail[] {
+  return projects.map((project) => localize(project, lang));
+}
+
+export function getProjectBySlug(slug: string | undefined, lang: Lang = "es"): ProjectDetail | undefined {
+  const base = projects.find((project) => project.slug === slug);
+  return base ? localize(base, lang) : undefined;
 }

@@ -1,6 +1,8 @@
 import { ArrowDown, MapPin, Mail, Linkedin } from "lucide-react";
+import { useLang } from "@/i18n/LanguageProvider";
 
 const HeroSection = () => {
+  const { t } = useLang();
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Subtle gradient orb */}
@@ -12,7 +14,7 @@ const HeroSection = () => {
           <div className="animate-fade-up opacity-0 stagger-1">
             <span className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground bg-secondary px-4 py-1.5 rounded-full mb-8">
               <MapPin className="w-3.5 h-3.5" />
-              Valparaíso, Chile · 10+ años de experiencia
+              {t.hero.badge}
             </span>
           </div>
 
@@ -22,18 +24,15 @@ const HeroSection = () => {
               <img src="/img/mvc.webp" alt="Marco Villegas" className="rounded-full w-64 h-64 mx-auto object-cover" />
             </figure>
             <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] tracking-tight animate-fade-up opacity-0 stagger-2">
-              Diseño productos
-              <br />
-              digitales que
-              <br />
-              <span className="text-gradient-primary">transforman negocios</span>
+              {t.hero.headingLead}{" "}
+              <span className="text-gradient-primary">{t.hero.headingHighlight}</span>
             </h1>
           </div>
           
 
           {/* Subtitle */}
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed animate-fade-up opacity-0 stagger-3">
-            Senior UX Desginer con enfoque end-to-end. Desde el discovery hasta el código, creo experiencias que impactan usuarios y cumplen metas de negocio.
+            {t.hero.subtitle}
           </p>
 
           {/* CTA */}
@@ -44,7 +43,7 @@ const HeroSection = () => {
               rel="noopener noreferrer"
               className="transition duration-300 bg-gradient-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-full hover:bg-gradient-accent transition-opacity shadow-glow"
             >
-              Descargar CV
+              {t.hero.downloadCv}
             </a>
             <a
               href="https://www.linkedin.com/in/marcovillegasc/"
