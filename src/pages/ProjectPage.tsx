@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import NotFound from "@/pages/NotFound";
 import Reveal from "@/components/Reveal";
 import PageTransition from "@/components/PageTransition";
+import Seo from "@/components/Seo";
 import { getProjectBySlug } from "@/data/projects";
 import { useLang } from "@/i18n/LanguageProvider";
 
@@ -25,6 +26,12 @@ const ProjectPage = () => {
 
   return (
     <PageTransition>
+    <Seo
+      title={`${project.title} · Marco Villegas`}
+      description={project.subtitle}
+      image={project.heroImage}
+      type="article"
+    />
     <div className="min-h-screen">
       <Navbar />
 
@@ -121,7 +128,7 @@ const ProjectPage = () => {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="rounded-2xl overflow-hidden border border-border">
-              <img src={project.feature.image} alt={project.feature.imageAlt} className="w-full" />
+              <img src={project.feature.image} alt={project.feature.imageAlt} loading="lazy" decoding="async" className="w-full" />
             </div>
             <div>
               <span className="text-xs font-medium text-primary uppercase tracking-widest mb-2 block">
@@ -169,6 +176,8 @@ const ProjectPage = () => {
               <img
                 src={project.process.image.src}
                 alt={project.process.image.alt}
+                loading="lazy"
+                decoding="async"
                 className="w-full"
               />
             </div>
@@ -189,6 +198,8 @@ const ProjectPage = () => {
                 <img
                   src={img}
                   alt={`${project.title} ${t.project.screen} ${i + 1}`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>

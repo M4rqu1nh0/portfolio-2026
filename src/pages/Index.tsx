@@ -6,6 +6,7 @@ import SkillsSection from "@/components/SkillsSection";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import PageTransition from "@/components/PageTransition";
+import Seo from "@/components/Seo";
 import { getProjects } from "@/data/projects";
 import { useLang } from "@/i18n/LanguageProvider";
 
@@ -15,6 +16,10 @@ const Index = () => {
 
   return (
     <PageTransition>
+      <Seo
+        title={lang === "en" ? "Marco Villegas · Senior UX Designer" : "Marco Villegas · UX Designer E2E"}
+        description={t.hero.subtitle}
+      />
       <div className="min-h-screen">
         <Navbar />
         <HeroSection />

@@ -1,19 +1,22 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import ProjectPage from "./ProjectPage";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 
 function renderAtPath(path: string) {
   return render(
-    <MemoryRouter initialEntries={[path]}>
-      <LanguageProvider>
-        <Routes>
-          <Route path="/proyecto/:slug" element={<ProjectPage />} />
-          <Route path="/en/proyecto/:slug" element={<ProjectPage />} />
-        </Routes>
-      </LanguageProvider>
-    </MemoryRouter>,
+    <HelmetProvider>
+      <MemoryRouter initialEntries={[path]}>
+        <LanguageProvider>
+          <Routes>
+            <Route path="/proyecto/:slug" element={<ProjectPage />} />
+            <Route path="/en/proyecto/:slug" element={<ProjectPage />} />
+          </Routes>
+        </LanguageProvider>
+      </MemoryRouter>
+    </HelmetProvider>,
   );
 }
 

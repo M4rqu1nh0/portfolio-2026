@@ -1,17 +1,20 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Index from "./Index";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import { projects } from "@/data/projects";
 
 function renderAt(path: string) {
   return render(
-    <MemoryRouter initialEntries={[path]}>
-      <LanguageProvider>
-        <Index />
-      </LanguageProvider>
-    </MemoryRouter>,
+    <HelmetProvider>
+      <MemoryRouter initialEntries={[path]}>
+        <LanguageProvider>
+          <Index />
+        </LanguageProvider>
+      </MemoryRouter>
+    </HelmetProvider>,
   );
 }
 
