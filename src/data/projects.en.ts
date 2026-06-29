@@ -254,31 +254,33 @@ export const projectsEn: Record<string, ProjectTranslation> = {
     },
   },
   "carteleria-digital": {
-    eyebrow: "Personal Project · 2024–2025",
+    title: "Digital Signage",
+    eyebrow: "Personal Project · 2026",
+    heroAlt: "Digital Signage SaaS - Admin panel",
     subtitle: "SaaS platform to manage digital display networks from a centralized panel — no physical visits required",
-    roles: ["Full Stack Developer", "Architecture", "UX/UI", "Electron"],
+    roles: ["Design", "Implementation", "Architecture", "UX/UI", "Claude AI"],
     metrics: [
       { value: "Multi-tenant", label: "SaaS architecture" },
       { value: "4 apps", label: "In a monorepo" },
-      { value: "Electron", label: "Offline-first desktop client" },
-      { value: "End-to-End TS", label: "Shared Zod contracts" },
+      { value: "Persistence", label: "Offline-first clients" },
+      { value: "End-to-End", label: "design -> implementation" },
     ],
     card: {
       description:
-        "Digital signage SaaS: remote screen management, multi-zone layout editor and an Electron client that syncs content offline. Monorepo with React, Express and TypeScript.",
-      tags: ["Full Stack", "React", "Electron", "TypeScript", "SaaS"],
+        "Digital signage SaaS. App hosted on Render, Neon PostgreSQL database and Cloudflare R2 for storage.",
+      tags: ["End to end", "React", "Claude AI", "TypeScript", "SaaS"],
       metrics: [
         { value: "Multi-tenant", label: "Architecture" },
         { value: "Monorepo", label: "Structure" },
       ],
     },
     context: [
-      "Companies with physical display networks (retail, restaurants, airports, clinics) face the same problem: updating content on each screen means going on-site, plugging in a USB drive or remote-accessing each device individually. When you have dozens or hundreds of devices, that doesn't scale.",
-      "DigiSignage Pro was born as a personal project to solve that problem at its root: a complete SaaS platform where content is managed from a central panel and each screen receives it automatically, with no manual intervention.",
+      "Companies with physical display networks (retail, restaurants, airports, clinics, etc.) face the same problem: updating content on each screen means going on-site, plugging in a USB drive or remote-accessing each device individually. When you have multiple devices, that doesn't scale.",
+      "DigiSignage was born as a personal project to solve that problem at its root: a complete SaaS platform where content is managed from a central panel and each screen receives it automatically, with no manual intervention.",
     ],
     challenge: [
-      "Design and build a system where the web panel, the server, the desktop client and the content player share data contracts without duplicating logic, operate independently and support multiple companies — each with their own isolated users, devices and content.",
-      "The screen client (Electron) had to be offline-first: keep playing the last known content even when the server was unavailable, and sync automatically when the connection came back.",
+      "Design and build a system where the web panel, the server and the content player clients (desktop, android and smart TV devices) share data contracts without duplicating logic, operate independently and support multiple companies — each with their own isolated users, devices and content.",
+      "The screen client had to be offline-first: keep playing the last known content even with no internet connection, and sync automatically when the connection came back.",
     ],
     feature: {
       imageAlt: "Visual zone-based layout editor",
@@ -346,7 +348,7 @@ export const projectsEn: Record<string, ProjectTranslation> = {
   },
   "retail-media-negociaciones": {
     subtitle: "Designing a module to centralize and bring traceability to the commercial negotiation lifecycle within an internal Retail Media platform",
-    roles: ["Product Designer", "Discovery", "Research", "Flow Design"],
+    roles: ["Product Designer", "Discovery", "Research", "Flow Design", "Functional prototype"],
     metrics: [
       { value: "3 days", label: "Delivery time" },
       { value: "5 insights", label: "From exploratory research" },
