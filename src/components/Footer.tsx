@@ -7,9 +7,6 @@ const Footer = () => {
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">{t.footer.rights}</p>
         <div className="flex items-center gap-6 text-sm text-muted-foreground">
-          <a href="mailto:contacto@mvc-ux.dev" className="hover:text-foreground transition-colors">
-            Email
-          </a>
           <a
             href="https://www.linkedin.com/in/marcovillegasc/"
             target="_blank"

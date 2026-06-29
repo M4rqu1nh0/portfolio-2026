@@ -45,7 +45,7 @@ const ProjectPage = () => {
             <ArrowLeft className="w-4 h-4" /> {t.project.backToHome}
           </Link>
 
-          <div className="max-w-3xl">
+          <div className="max-w-6xl">
             <span className="text-xs font-medium text-primary uppercase tracking-widest mb-3 block">
               {project.eyebrow}
             </span>
@@ -146,7 +146,7 @@ const ProjectPage = () => {
         <div className="container mx-auto px-6">
           <div className="w-12 h-px bg-accent mb-6" />
           <h2 className="font-heading text-4xl md:text-5xl font-semibold mb-4">{t.project.process}</h2>
-          <p className="text-muted-foreground mb-16 max-w-2xl">{project.process.intro}</p>
+          <p className="text-muted-foreground mb-16 max-w-6xl">{project.process.intro}</p>
 
           <div className="space-y-8">
             {project.process.steps.map((step, i) => (
@@ -157,7 +157,7 @@ const ProjectPage = () => {
                   </span>
                   <div>
                     <h3 className="font-heading text-lg font-semibold mb-2">{step.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed max-w-xl">
+                    <p className="text-muted-foreground text-sm leading-relaxed max-w-6xl">
                       {step.description}
                     </p>
                   </div>
@@ -190,7 +190,7 @@ const ProjectPage = () => {
         <div className="container mx-auto px-6">
           <div className="w-12 h-px bg-accent mb-6" />
           <h2 className="font-heading text-4xl md:text-5xl font-semibold mb-4">{t.project.results}</h2>
-          <p className="text-muted-foreground mb-12 max-w-2xl">{project.gallery.intro}</p>
+          <p className="text-muted-foreground mb-12 max-w-6xl">{project.gallery.intro}</p>
 
           <div className="grid md:grid-cols-2 gap-4">
             {project.gallery.images.map((img, i) => (
@@ -210,7 +210,7 @@ const ProjectPage = () => {
 
       {/* Outcomes */}
       <section className="py-24 border-t border-border">
-        <div className="container mx-auto px-6 max-w-3xl">
+        <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="font-heading text-3xl font-bold mb-8">{project.outcomes.title}</h2>
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             {project.outcomes.items.map((item) => (

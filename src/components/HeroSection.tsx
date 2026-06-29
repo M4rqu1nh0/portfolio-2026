@@ -46,12 +46,6 @@ const HeroSection = () => {
               </a>
             </div>
 
-            <a
-              href="mailto:contacto@mvc-ux.dev"
-              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mt-6 animate-fade-up opacity-0 stagger-5"
-            >
-              <Mail className="w-3.5 h-3.5" /> contacto@mvc-ux.dev
-            </a>
           </div>
 
           {/* Portrait column */}

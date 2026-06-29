@@ -253,7 +253,7 @@ export const projectsEn: Record<string, ProjectTranslation> = {
       ],
     },
   },
-  "digisignage-pro": {
+  "carteleria-digital": {
     eyebrow: "Personal Project · 2024–2025",
     subtitle: "SaaS platform to manage digital display networks from a centralized panel — no physical visits required",
     roles: ["Full Stack Developer", "Architecture", "UX/UI", "Electron"],

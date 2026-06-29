@@ -70,10 +70,10 @@ const es: Dictionary = {
   },
   hero: {
     badge: "Valparaíso, Chile · 10+ años de experiencia",
-    headingLead: "Diseño productos digitales que",
-    headingHighlight: "transforman negocios",
+    headingLead: "Construyo productos digitales que",
+    headingHighlight: "logran objetivos",
     subtitle:
-      "Senior UX Designer con enfoque end-to-end. Desde el discovery hasta el código, creo experiencias que impactan usuarios y cumplen metas de negocio.",
+      "Senior UX Designer con enfoque end-to-end. Desde el discovery hasta el código, creo productos usables y que cumplen metas de negocio.",
     downloadCv: "Descargar CV",
     linkedin: "LinkedIn",
   },
