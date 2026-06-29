@@ -87,17 +87,17 @@ export interface ProjectTranslation {
 
 export const projects: ProjectDetail[] = [
   {
-    slug: "digisignage-pro",
+    slug: "carteleria-digital",
     eyebrow: "Proyecto Personal · 2026",
-    title: "DigiSignage Pro",
+    title: "Cartelería Digital",
     subtitle: "Plataforma SaaS para gestionar redes de pantallas digitales desde un panel centralizado, sin visitar cada dispositivo físicamente",
-    roles: ["Full Stack Developer", "Arquitectura", "UX/UI", "Claude AI"],
+    roles: ["Diseño","Implementación", "Arquitectura", "UX/UI", "Claude AI"],
     heroImage: "/img/dsp_01.webp",
-    heroAlt: "DigiSignage Pro - Panel de administración",
+    heroAlt: "Cartelería Digital SaaS - Panel de administración",
     card: {
       description:
-        "SaaS de señalización digital: paneles remotos, editor de layouts con zonas múltiples y cliente Electron que sincroniza contenido offline. Monorepo con React, Express y TypeScript.",
-      tags: ["Full Stack", "React", "Claude AI", "TypeScript", "SaaS"],
+        "SaaS de cartelería digital. Aplicación alojada en Render, BD Neon PostgreSQL y Cloudflare R2 para almacenamiento",
+      tags: ["End to end", "React", "Claude AI", "TypeScript", "SaaS"],
       metrics: [
         { value: "Multi-tenant", label: "Arquitectura" },
         { value: "Monorepo", label: "Estructura" },
@@ -106,16 +106,16 @@ export const projects: ProjectDetail[] = [
     metrics: [
       { value: "Multi-tenant", label: "Arquitectura SaaS" },
       { value: "4 apps", label: "En un monorepo" },
-      { value: "Electron", label: "Cliente desktop offline-first" },
-      { value: "End-to-End TS", label: "Contratos Zod compartidos" },
+      { value: "Persistencia", label: "Clientes offline-first" },
+      { value: "End-to-End", label: "diseño -> implementación" },
     ],
     context: [
-      "Las empresas con redes de pantallas físicas (retail, restaurantes, aeropuertos, clínicas) enfrentan el mismo problema: actualizar el contenido de cada pantalla implica ir hasta el lugar, conectar un pendrive o acceder remotamente a cada equipo de forma individual. Cuando tienes decenas o cientos de dispositivos, eso no escala.",
-      "DigiSignage Pro nació como un proyecto personal para resolver ese problema de raíz: una plataforma SaaS completa donde el contenido se gestiona desde un panel central y cada pantalla lo recibe automáticamente, sin intervención manual.",
+      "Las empresas con redes de pantallas físicas (retail, restaurantes, aeropuertos, clínicas, etc.) enfrentan el mismo problema: actualizar el contenido de cada pantalla implica ir hasta el lugar, conectar un pendrive o acceder remotamente a cada equipo de forma individual. Cuando tienes múltiples dispositivos, eso no escala.",
+      "DigiSignage nació como un proyecto personal para resolver ese problema de raíz: una plataforma SaaS completa donde el contenido se gestiona desde un panel central y cada pantalla lo recibe automáticamente, sin intervención manual.",
     ],
     challenge: [
-      "Diseñar y construir un sistema donde el panel web, el servidor, el cliente de escritorio y el reproductor de contenido compartan contratos de datos sin duplicar lógica, funcionen de manera independiente y soporten múltiples empresas con sus propios usuarios, dispositivos y contenidos aislados entre sí.",
-      "El cliente de pantalla (Electron) debía ser offline-first: seguir reproduciendo el último contenido conocido aunque el servidor no estuviera disponible, y sincronizar automáticamente cuando volviera la conexión.",
+      "Diseñar y construir un sistema donde el panel web, el servidor y los clientes reproductores de contenido (dispositivos de escritorio, android y smartTVs) compartan contratos de datos sin duplicar lógica, funcionen de manera independiente y soporten múltiples empresas con sus propios usuarios, dispositivos y contenidos aislados entre sí.",
+      "El cliente de pantalla debía ser offline-first: seguir reproduciendo el último contenido conocido aunque no tenga conexión a internet, y sincronizar automáticamente cuando volviera la conexión.",
     ],
     feature: {
       image: "/img/dsp_02.webp",
@@ -201,7 +201,7 @@ export const projects: ProjectDetail[] = [
     eyebrow: "Caso Práctico · 2026",
     title: "Módulo de Negociaciones",
     subtitle: "Diseño de un módulo para centralizar y dar trazabilidad al ciclo de vida de negociaciones comerciales dentro de una plataforma interna de Retail Media",
-    roles: ["Product Designer", "Discovery", "Research", "Diseño de flujos"],
+    roles: ["Product Designer", "Discovery", "Research", "Diseño de flujos", "Prototipo funcional"],
     heroImage: "/img/rm-neg_01.webp",
     heroAlt: "Módulo de Negociaciones - Listado con gestión de estados",
     card: {
