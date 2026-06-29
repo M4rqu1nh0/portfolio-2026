@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
+import ScrollToHash from "@/components/ScrollToHash";
 import Index from "./pages/Index.tsx";
 import ProjectPage from "./pages/ProjectPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -7,6 +8,7 @@ import NotFound from "./pages/NotFound.tsx";
 const App = () => (
   <BrowserRouter>
     <LanguageProvider>
+      <ScrollToHash />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/proyecto/:slug" element={<ProjectPage />} />
