@@ -87,6 +87,224 @@ export interface ProjectTranslation {
 
 export const projects: ProjectDetail[] = [
   {
+    slug: "digisignage-pro",
+    eyebrow: "Proyecto Personal · 2026",
+    title: "DigiSignage Pro",
+    subtitle: "Plataforma SaaS para gestionar redes de pantallas digitales desde un panel centralizado, sin visitar cada dispositivo físicamente",
+    roles: ["Full Stack Developer", "Arquitectura", "UX/UI", "Claude AI"],
+    heroImage: "/img/dsp_01.webp",
+    heroAlt: "DigiSignage Pro - Panel de administración",
+    card: {
+      description:
+        "SaaS de señalización digital: paneles remotos, editor de layouts con zonas múltiples y cliente Electron que sincroniza contenido offline. Monorepo con React, Express y TypeScript.",
+      tags: ["Full Stack", "React", "Claude AI", "TypeScript", "SaaS"],
+      metrics: [
+        { value: "Multi-tenant", label: "Arquitectura" },
+        { value: "Monorepo", label: "Estructura" },
+      ],
+    },
+    metrics: [
+      { value: "Multi-tenant", label: "Arquitectura SaaS" },
+      { value: "4 apps", label: "En un monorepo" },
+      { value: "Electron", label: "Cliente desktop offline-first" },
+      { value: "End-to-End TS", label: "Contratos Zod compartidos" },
+    ],
+    context: [
+      "Las empresas con redes de pantallas físicas (retail, restaurantes, aeropuertos, clínicas) enfrentan el mismo problema: actualizar el contenido de cada pantalla implica ir hasta el lugar, conectar un pendrive o acceder remotamente a cada equipo de forma individual. Cuando tenés decenas o cientos de dispositivos, eso no escala.",
+      "DigiSignage Pro nació como un proyecto personal para resolver ese problema de raíz: una plataforma SaaS completa donde el contenido se gestiona desde un panel central y cada pantalla lo recibe automáticamente, sin intervención manual.",
+    ],
+    challenge: [
+      "Diseñar y construir un sistema donde el panel web, el servidor, el cliente de escritorio y el reproductor de contenido compartan contratos de datos sin duplicar lógica, funcionen de manera independiente y soporten múltiples empresas con sus propios usuarios, dispositivos y contenidos aislados entre sí.",
+      "El cliente de pantalla (Electron) debía ser offline-first: seguir reproduciendo el último contenido conocido aunque el servidor no estuviera disponible, y sincronizar automáticamente cuando volviera la conexión.",
+    ],
+    feature: {
+      image: "/img/dsp_02.webp",
+      imageAlt: "Editor visual de layouts por zonas",
+      eyebrow: "Editor de layouts",
+      title: "Múltiples zonas de contenido",
+      paragraph:
+        "El corazón del producto es el editor visual de dispositivos: cada pantalla puede dividirse en 1, 2 o 4 zonas independientes. Cada zona acepta un widget distinto (video, imágenes, reloj o clima) con su propia playlist y configuración. El contenido se arrastra y reordena con drag-and-drop, y el reproductor lo refleja en tiempo real.",
+    },
+    process: {
+      intro: "De un problema concreto a un producto SaaS completo, construido con arquitectura de monorepo y TypeScript end-to-end.",
+      steps: [
+        {
+          number: "01",
+          title: "Arquitectura Monorepo con Turborepo",
+          description:
+            "El proyecto vive en un único repositorio con cuatro aplicaciones (server, web, desktop, android) y tres paquetes compartidos (shared, player, config). Turborepo orquesta los builds de forma incremental y en paralelo. Esto permitió que los contratos de datos, la configuración de TypeScript y las reglas de ESLint sean un único source of truth para todas las apps.",
+        },
+        {
+          number: "02",
+          title: "Contratos compartidos con Zod",
+          description:
+            "El problema clásico de los proyectos full stack es el drift entre lo que el servidor envía y lo que el cliente espera. En DigiSignage Pro, todos los esquemas de dominio (dispositivos, layouts, heartbeats, medios) viven en el paquete shared como schemas Zod. El servidor los usa para validar, el cliente web los usa para tipar, y el reproductor los consume directamente. Un solo cambio de esquema propaga al sistema entero.",
+        },
+        {
+          number: "03",
+          title: "API REST + Autenticación Multi-tenant",
+          description:
+            "El backend en Express + TypeScript implementa autenticación con JWT en cookies httpOnly, roles por empresa (super_admin, admin, operador) y aislamiento estricto por empresaId en todas las queries. Los medios se suben directamente al bucket R2/S3 con presigned URLs generadas por el servidor, evitando que el tráfico de archivos pase por él.",
+        },
+        {
+          number: "04",
+          title: "Panel Web en React con editor visual",
+          description:
+            "El panel de administración está construido con React 18, Vite, TanStack Query y shadcn/ui. Incluye dashboard de dispositivos con estado online/offline en tiempo real, biblioteca de medios con carga por drag-drop y detección de conflictos al eliminar, editor de layouts con @dnd-kit para reordenar playlists, y gestión de usuarios y empresas.",
+        },
+        {
+          number: "05",
+          title: "Cliente Electron offline-first",
+          description:
+            "Cada pantalla física corre un cliente Electron que, al primer arranque, muestra un código de 8 dígitos para vincularse al panel. Una vez vinculado, sincroniza el layout y descarga los medios al disco local. Protocolos personalizados (media://, img://) sirven los archivos sin CORS. Si el servidor no está disponible, el dispositivo sigue reproduciendo el último estado conocido.",
+        },
+        {
+          number: "06",
+          title: "Reproductor vanilla JS sin dependencias de framework",
+          description:
+            "El reproductor que corre en las pantallas es un módulo vanilla JS sin React ni Vue. Esto lo hace embebible en el cliente Electron, en el preview del panel web y eventualmente en un WebView de Android, sin overhead de framework. CSS Grid maneja las zonas de layout, y los widgets (video, imágenes, reloj, clima) se montan y desmontan dinámicamente según la configuración recibida.",
+        },
+      ],
+    },
+    gallery: {
+      intro:
+        "El resultado es un sistema SaaS completo que cubre todo el ciclo: alta de empresa, vinculación de pantallas con código de emparejamiento, carga de contenido, diseño de layout por zonas y distribución automática a cada dispositivo. La arquitectura monorepo con contratos Zod garantiza que cualquier cambio de dominio se propague de forma segura a las cuatro aplicaciones.",
+      images: [
+        "/img/dsp-car_01.webp",
+        "/img/dsp-car_02.webp",
+        "/img/dsp-car_03.webp",
+        "/img/dsp-car_04.webp",
+        "/img/dsp-car_05.webp",
+        "/img/dsp-car_06.webp",
+      ],
+    },
+    outcomes: {
+      title: "Decisiones Clave",
+      items: [
+        {
+          label: "Monorepo desde el día cero:",
+          text: "Arrancar con Turborepo y pnpm workspaces fue la decisión más importante del proyecto. Permitió que el reproductor, el panel y el servidor compartan lógica sin duplicar código y que los builds sean incrementales. La deuda técnica que hubiera acumulado un proyecto multi-repo se eliminó antes de existir.",
+        },
+        {
+          label: "Zod como fuente única de verdad:",
+          text: "Definir todos los contratos de dominio en schemas Zod compartidos —y no en tipos TypeScript separados por app— eliminó la categoría entera de bugs de desincronización entre frontend y backend. Cualquier cambio de esquema falla en compilación, no en producción.",
+        },
+        {
+          label: "Reproductor sin framework:",
+          text: "La decisión de escribir el reproductor en vanilla JS fue contraintuitiva pero correcta: el mismo código corre en Electron, en el preview del panel web y está listo para un WebView de Android sin modificaciones. Un reproductor con React hubiera requerido tres adaptaciones distintas.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "retail-media-negociaciones",
+    eyebrow: "Caso Práctico · 2026",
+    title: "Módulo de Negociaciones",
+    subtitle: "Diseño de un módulo para centralizar y dar trazabilidad al ciclo de vida de negociaciones comerciales dentro de una plataforma interna de Retail Media",
+    roles: ["Product Designer", "Discovery", "Research", "Diseño de flujos"],
+    heroImage: "/img/rm-neg_01.webp",
+    heroAlt: "Módulo de Negociaciones - Listado con gestión de estados",
+    card: {
+      description:
+        "Propuesta end-to-end para eliminar la fragmentación en Excel/email/WhatsApp y centralizar las negociaciones comerciales en la plataforma interna de Retail Media.",
+      tags: ["Product Design", "Research", "Flujos As-Is/To-Be", "Roadmap MVP"],
+      metrics: [
+        { value: "3 días", label: "Tiempo de entrega" },
+        { value: "E2E", label: "Proceso" },
+      ],
+    },
+    metrics: [
+      { value: "3 días", label: "Tiempo de entrega" },
+      { value: "5 insights", label: "Del research exploratorio" },
+      { value: "< 15%", label: "Meta de discrepancias" },
+      { value: "< 10 min", label: "Para reconstruir un acuerdo" },
+    ],
+    context: [
+      "Retail Media es una estrategia publicitaria donde los retailers comercializan espacios dentro de sus propios canales digitales y físicos, permitiendo a las marcas impactar a consumidores con datos propios para segmentar audiencias y medir resultados con mayor precisión.",
+      "El equipo comercial (Category Managers y Product Managers) opera con una plataforma interna que cubre gran parte del ciclo de vida de las campañas, desde la creación de propuestas hasta la coordinación con operaciones para su activación.",
+    ],
+    challenge: [
+      "La plataforma no contemplaba un flujo estructurado para gestionar las negociaciones comerciales. Las condiciones se acordaban por email y WhatsApp, los archivos se versionaban a mano y las aprobaciones del supervisor se daban de forma verbal o por chat, sin ningún registro.",
+      "Esto generaba una brecha crítica: fragmentación de información, falta de trazabilidad, errores en la activación de campañas y dificultades para coordinar el trabajo entre las áreas involucradas.",
+    ],
+    feature: {
+      image: "/img/rm-neg_02.webp",
+      imageAlt: "Flujo As-Is: negociación fuera del sistema",
+      eyebrow: "El problema",
+      title: "Negociación fuera del sistema",
+      paragraph:
+        "El proceso de negociación ocurría completamente fuera de la plataforma: propuestas en Excel, iteraciones por email y WhatsApp, aprobaciones informales por chat y, al final, una transcripción manual al sistema. Cada rechazo generaba un loop sin trazabilidad, y el dato llegaba al sistema solo en el último paso, con alto riesgo de error.",
+    },
+    process: {
+      intro: "Un proceso completo desde la hipótesis hasta el wireframe, entregado en 3 días hábiles.",
+      steps: [
+        {
+          number: "01",
+          title: "Definición de hipótesis",
+          description:
+            "Antes de hablar con usuarios, planteé 5 hipótesis sobre el problema: gestión fuera del sistema, errores que llegan a la activación, aprobaciones sin formalizar y necesidad de visibilidad del pipeline. Esto orientó el research y permitió validar o descartar cada supuesto con evidencia.",
+        },
+        {
+          number: "02",
+          title: "Research exploratorio",
+          description:
+            "Research simulado con método real: 5 entrevistas en profundidad, 2 contextual inquiries y revisión de 8 negociaciones cerradas con 7 participantes (3 Category Managers, 2 Product Managers, 2 Supervisores). El objetivo fue mapear el proceso real y cuantificar el costo de gestionarlo fuera del sistema.",
+        },
+        {
+          number: "03",
+          title: "Síntesis e insights",
+          description:
+            "A partir de los clusters de afinidad identifiqué 5 insights clave: cada persona tenía su propia «versión de la verdad», las aprobaciones eran informales y se perdían, reconstruir un acuerdo tomaba ~2,5 horas, el traspaso a operaciones era donde se cometían los errores, y los supervisores no tenían visibilidad del pipeline.",
+        },
+        {
+          number: "04",
+          title: "Oportunidades y validación",
+          description:
+            "Traducí los insights en 4 preguntas HMW: fuente única de verdad, aprobación trazable, seguimiento de estados en tiempo real y eliminación de la transcripción manual. Validé las 5 hipótesis: 3 completamente confirmadas, 1 parcial a medir en testing y 1 nueva hipótesis emergente sobre visibilidad del pipeline.",
+        },
+        {
+          number: "05",
+          title: "Priorización y Roadmap MVP",
+          description:
+            "Prioricé las épicas por impacto/esfuerzo y definí el alcance con MoSCoW: el MVP (Now) incluye ficha de negociación, gestión de estados, historial de versiones, workflow de aprobación con motivo y audit trail básico. El plan se completa con fases Next y Later ancladas a métricas medibles desde el research.",
+        },
+        {
+          number: "06",
+          title: "Flujos As-Is / To-Be y wireframes",
+          description:
+            "Documenté el flujo actual (As-Is) con sus 2 loops de iteración sin trazabilidad y lo contrasté con el flujo propuesto (To-Be), donde cada paso queda registrado con su estado, las iteraciones generan versiones automáticas y el traspaso a operaciones es directo. Entregué wireframes lo-fi del listado de negociaciones, ficha de condiciones, historial de versiones y flujo de aprobación.",
+        },
+      ],
+    },
+    gallery: {
+      intro:
+        "El diseño propuesto traslada todo el ciclo de negociación dentro de la plataforma: desde la creación de la negociación hasta el traspaso automático a operaciones, con trazabilidad completa y una máquina de estados visible en tiempo real. La línea base del research (3/8 discrepancias · 2,5 h por reconstrucción · 0% de aprobaciones formales) define las métricas de éxito medibles post-lanzamiento.",
+      images: [
+        "/img/rm-neg-car_01.webp",
+        "/img/rm-neg-car_02.webp",
+        "/img/rm-neg-car_03.webp",
+        "/img/rm-neg-car_04.webp",
+      ],
+    },
+    outcomes: {
+      title: "Decisiones Clave",
+      items: [
+        {
+          label: "Research antes que pantallas:",
+          text: "Propuse no diseñar ninguna interfaz sin antes validar el problema con evidencia. El research confirmó que la brecha no era visual sino estructural: el flujo de negociación no existía dentro del sistema. Esto orientó todo el scope del MVP.",
+        },
+        {
+          label: "Métricas ancladas a la línea base:",
+          text: "Cada KPI del roadmap tiene su contraparte en el research (discrepancias, tiempo de reconstrucción, aprobaciones formales), lo que permite demostrar impacto de negocio post-lanzamiento y no solo mejora percibida.",
+        },
+        {
+          label: "MVP que resuelve la causa raíz:",
+          text: "En lugar de agregar features, el MVP ataca los 3 insights de mayor impacto y menor esfuerzo (fuente única de verdad, trazabilidad de aprobaciones, gestión de estados). El traspaso automático se difiere a Next para no bloquear el lanzamiento con integraciones complejas.",
+        },
+      ],
+    },
+  },
+  {
     slug: "santander-officebanking",
     eyebrow: "Banco Santander · 2021–2023",
     title: "OfficeBanking",
@@ -98,7 +316,7 @@ export const projects: ProjectDetail[] = [
       description:
         "Transformación completa de la plataforma para clientes segmento empresas de Banco Santander. Desde Discovery hasta implementación frontend.",
       tags: ["End to End", "Design Thinking", "UX/UI", "Research", "Angular"],
-      featured: true,
+      featured: false,
       metrics: [
         { value: "2 años", label: "Duración" },
         { value: "Múltiples", label: "Segmentos" },

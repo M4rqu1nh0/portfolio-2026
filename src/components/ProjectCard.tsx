@@ -43,7 +43,7 @@ const ProjectCard = ({ title, subtitle, description, tags, image, link, metrics,
         <p className="text-muted-foreground leading-relaxed line-clamp-2 mb-5">{description}</p>
 
         {/* Metrics */}
-        {metrics && (
+        {/* {metrics && (
           <div className="flex gap-8 mb-5">
             {metrics.map((m) => (
               <div key={m.label}>
@@ -52,7 +52,7 @@ const ProjectCard = ({ title, subtitle, description, tags, image, link, metrics,
               </div>
             ))}
           </div>
-        )}
+        )} */}
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2">
