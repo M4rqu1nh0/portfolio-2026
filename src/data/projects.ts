@@ -110,7 +110,7 @@ export const projects: ProjectDetail[] = [
       { value: "End-to-End TS", label: "Contratos Zod compartidos" },
     ],
     context: [
-      "Las empresas con redes de pantallas físicas (retail, restaurantes, aeropuertos, clínicas) enfrentan el mismo problema: actualizar el contenido de cada pantalla implica ir hasta el lugar, conectar un pendrive o acceder remotamente a cada equipo de forma individual. Cuando tenés decenas o cientos de dispositivos, eso no escala.",
+      "Las empresas con redes de pantallas físicas (retail, restaurantes, aeropuertos, clínicas) enfrentan el mismo problema: actualizar el contenido de cada pantalla implica ir hasta el lugar, conectar un pendrive o acceder remotamente a cada equipo de forma individual. Cuando tienes decenas o cientos de dispositivos, eso no escala.",
       "DigiSignage Pro nació como un proyecto personal para resolver ese problema de raíz: una plataforma SaaS completa donde el contenido se gestiona desde un panel central y cada pantalla lo recibe automáticamente, sin intervención manual.",
     ],
     challenge: [
@@ -260,7 +260,7 @@ export const projects: ProjectDetail[] = [
           number: "04",
           title: "Oportunidades y validación",
           description:
-            "Traducí los insights en 4 preguntas HMW: fuente única de verdad, aprobación trazable, seguimiento de estados en tiempo real y eliminación de la transcripción manual. Validé las 5 hipótesis: 3 completamente confirmadas, 1 parcial a medir en testing y 1 nueva hipótesis emergente sobre visibilidad del pipeline.",
+            "Traduje los insights en 4 preguntas HMW: fuente única de verdad, aprobación trazable, seguimiento de estados en tiempo real y eliminación de la transcripción manual. Validé las 5 hipótesis: 3 completamente confirmadas, 1 parcial a medir en testing y 1 nueva hipótesis emergente sobre visibilidad del pipeline.",
         },
         {
           number: "05",
