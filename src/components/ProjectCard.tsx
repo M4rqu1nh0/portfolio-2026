@@ -16,7 +16,7 @@ const ProjectCard = ({ title, subtitle, description, tags, image, link, metrics,
   return (
     <Link
       to={link}
-      className={`proyect-link group block rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-glow ${
+      className={`proyect-link group block rounded-2xl border border-border bg-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card ${
         featured ? "md:col-span-2" : ""
       }`}
     >
@@ -25,31 +25,34 @@ const ProjectCard = ({ title, subtitle, description, tags, image, link, metrics,
         <img
           src={image}
           alt={title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
-        <div className="absolute top-4 right-4 bg-card/80 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-          <ArrowUpRight className="w-4 h-4 text-primary" />
+        <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm p-2 rounded-full opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+          <ArrowUpRight className="w-4 h-4 text-accent" />
         </div>
       </div>
 
       {/* Content */}
       <div className="p-6 md:p-8">
-        <p className="text-xs font-medium text-primary uppercase tracking-widest mb-2">{subtitle}</p>
-        <h3 className="font-heading text-xl md:text-2xl font-bold mb-2">{title}</h3>
-        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-4">{description}</p>
+        <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-3 transition-colors group-hover:text-accent">
+          {subtitle}
+        </p>
+        <h3 className="font-heading text-2xl md:text-3xl font-semibold mb-3 leading-tight">{title}</h3>
+        <p className="text-muted-foreground leading-relaxed line-clamp-2 mb-5">{description}</p>
 
         {/* Metrics */}
-        {metrics && (
-          <div className="flex gap-8 mb-4">
+        {/* {metrics && (
+          <div className="flex gap-8 mb-5">
             {metrics.map((m) => (
               <div key={m.label}>
-                <p className="text-2xl font-heading font-bold text-gradient-primary">{m.value}</p>
+                <p className="text-2xl font-heading font-semibold text-gradient-primary">{m.value}</p>
                 <p className="text-xs text-muted-foreground">{m.label}</p>
               </div>
             ))}
           </div>
-        )}
+        )} */}
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2">

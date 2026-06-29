@@ -253,6 +253,187 @@ export const projectsEn: Record<string, ProjectTranslation> = {
       ],
     },
   },
+  "digisignage-pro": {
+    eyebrow: "Personal Project · 2024–2025",
+    subtitle: "SaaS platform to manage digital display networks from a centralized panel — no physical visits required",
+    roles: ["Full Stack Developer", "Architecture", "UX/UI", "Electron"],
+    metrics: [
+      { value: "Multi-tenant", label: "SaaS architecture" },
+      { value: "4 apps", label: "In a monorepo" },
+      { value: "Electron", label: "Offline-first desktop client" },
+      { value: "End-to-End TS", label: "Shared Zod contracts" },
+    ],
+    card: {
+      description:
+        "Digital signage SaaS: remote screen management, multi-zone layout editor and an Electron client that syncs content offline. Monorepo with React, Express and TypeScript.",
+      tags: ["Full Stack", "React", "Electron", "TypeScript", "SaaS"],
+      metrics: [
+        { value: "Multi-tenant", label: "Architecture" },
+        { value: "Monorepo", label: "Structure" },
+      ],
+    },
+    context: [
+      "Companies with physical display networks (retail, restaurants, airports, clinics) face the same problem: updating content on each screen means going on-site, plugging in a USB drive or remote-accessing each device individually. When you have dozens or hundreds of devices, that doesn't scale.",
+      "DigiSignage Pro was born as a personal project to solve that problem at its root: a complete SaaS platform where content is managed from a central panel and each screen receives it automatically, with no manual intervention.",
+    ],
+    challenge: [
+      "Design and build a system where the web panel, the server, the desktop client and the content player share data contracts without duplicating logic, operate independently and support multiple companies — each with their own isolated users, devices and content.",
+      "The screen client (Electron) had to be offline-first: keep playing the last known content even when the server was unavailable, and sync automatically when the connection came back.",
+    ],
+    feature: {
+      imageAlt: "Visual zone-based layout editor",
+      eyebrow: "Layout editor",
+      title: "Multiple content zones",
+      paragraph:
+        "The heart of the product is the visual device editor: each screen can be divided into 1, 2 or 4 independent zones. Each zone accepts a different widget (video, images, clock or weather) with its own playlist and settings. Content is dragged and reordered with drag-and-drop, and the player reflects it in real time.",
+    },
+    process: {
+      intro: "From a concrete problem to a complete SaaS product, built with a monorepo architecture and end-to-end TypeScript.",
+      steps: [
+        {
+          title: "Monorepo Architecture with Turborepo",
+          description:
+            "The project lives in a single repository with four applications (server, web, desktop, android) and three shared packages (shared, player, config). Turborepo orchestrates builds incrementally and in parallel. This made the data contracts, TypeScript config and ESLint rules a single source of truth for all apps.",
+        },
+        {
+          title: "Shared Contracts with Zod",
+          description:
+            "The classic full-stack drift problem — server sends one shape, client expects another — is eliminated here. All domain schemas (devices, layouts, heartbeats, media) live in the shared package as Zod schemas. The server uses them to validate, the web client uses them to type, and the player consumes them directly. One schema change propagates safely to the entire system.",
+        },
+        {
+          title: "REST API + Multi-tenant Auth",
+          description:
+            "The Express + TypeScript backend implements JWT auth in httpOnly cookies, per-company roles (super_admin, admin, operator) and strict empresaId isolation in every query. Media files are uploaded directly to R2/S3 with presigned URLs generated server-side, keeping file traffic off the API.",
+        },
+        {
+          title: "React Web Panel with Visual Editor",
+          description:
+            "The admin panel is built with React 18, Vite, TanStack Query and shadcn/ui. It includes a device dashboard with real-time online/offline status, a media library with drag-drop upload and conflict detection on delete, a layout editor with @dnd-kit for playlist reordering, and user and company management.",
+        },
+        {
+          title: "Offline-First Electron Client",
+          description:
+            "Each physical screen runs an Electron client that, on first boot, shows an 8-digit code to pair with the panel. Once paired, it syncs the layout and downloads media to local disk. Custom protocols (media://, img://) serve the files without CORS issues. If the server is unreachable, the device keeps playing the last known state.",
+        },
+        {
+          title: "Framework-Free Vanilla JS Player",
+          description:
+            "The player running on screens is a vanilla JS module with no React or Vue. This makes it embeddable in the Electron client, in the web panel preview and eventually in an Android WebView — without any framework overhead. CSS Grid handles the layout zones, and the widgets (video, images, clock, weather) mount and unmount dynamically based on the received config.",
+        },
+      ],
+    },
+    gallery: {
+      intro:
+        "The result is a complete SaaS system covering the full cycle: company onboarding, screen pairing with a claim code, content upload, zone-based layout design and automatic distribution to every device. The monorepo architecture with shared Zod contracts ensures any domain change propagates safely across all four applications.",
+    },
+    outcomes: {
+      title: "Key Decisions",
+      items: [
+        {
+          label: "Monorepo from day zero:",
+          text: "Starting with Turborepo and pnpm workspaces was the single most important architectural decision. It let the player, panel and server share logic without duplicating code and made builds incremental. The technical debt that a multi-repo setup would have accumulated was eliminated before it could exist.",
+        },
+        {
+          label: "Zod as the single source of truth:",
+          text: "Defining all domain contracts as shared Zod schemas — rather than separate TypeScript types per app — eliminated an entire category of frontend/backend desync bugs. Any schema change fails at compile time, not in production.",
+        },
+        {
+          label: "Framework-free player:",
+          text: "Writing the player in vanilla JS was counterintuitive but correct: the same code runs in Electron, in the web panel preview and is ready for an Android WebView without modifications. A React-based player would have required three separate adaptations.",
+        },
+      ],
+    },
+  },
+  "retail-media-negociaciones": {
+    subtitle: "Designing a module to centralize and bring traceability to the commercial negotiation lifecycle within an internal Retail Media platform",
+    roles: ["Product Designer", "Discovery", "Research", "Flow Design"],
+    metrics: [
+      { value: "3 days", label: "Delivery time" },
+      { value: "5 insights", label: "From exploratory research" },
+      { value: "37% → <10%", label: "Discrepancy target" },
+      { value: "2.5 h → <10 min", label: "To reconstruct a deal" },
+    ],
+    card: {
+      description:
+        "End-to-end proposal to eliminate fragmentation across Excel/email/WhatsApp and centralize commercial negotiations in a Retail Media internal platform.",
+      tags: ["Product Design", "Research", "As-Is/To-Be Flows", "MVP Roadmap"],
+      metrics: [
+        { value: "3 days", label: "Delivery time" },
+        { value: "E2E", label: "Process" },
+      ],
+    },
+    context: [
+      "Retail Media is an advertising strategy where retailers commercialize spaces within their own digital and physical channels, allowing brands to reach consumers using the retailer's own data to segment audiences and measure results with greater precision.",
+      "The commercial team (Category Managers and Product Managers) operates on an internal platform that covers most of the campaign lifecycle, from creating commercial proposals to coordinating with operations for activation.",
+    ],
+    challenge: [
+      "The platform had no structured flow for managing commercial negotiations. Conditions were agreed via email and WhatsApp, files were versioned manually and supervisor approvals happened verbally or through chat, with no record whatsoever.",
+      "This created a critical gap: fragmented information, lack of traceability, errors in campaign activation and difficulties coordinating work across the involved teams.",
+    ],
+    feature: {
+      imageAlt: "As-Is flow: negotiation outside the system",
+      eyebrow: "The problem",
+      title: "Negotiation outside the system",
+      paragraph:
+        "The negotiation process happened entirely outside the platform: proposals in Excel, iterations via email and WhatsApp, informal approvals through chat and, at the end, a manual transcription to the system. Every rejection created a loop with no traceability, and the data only reached the system at the last step — with a high risk of error.",
+    },
+    process: {
+      intro: "A complete process from hypothesis to wireframe, delivered in 3 business days.",
+      steps: [
+        {
+          title: "Hypothesis Definition",
+          description:
+            "Before talking to users, I formulated 5 hypotheses about the problem: management outside the system, errors reaching activation, informal approvals and the need for pipeline visibility. This focused the research and allowed each assumption to be validated or discarded with evidence.",
+        },
+        {
+          title: "Exploratory Research",
+          description:
+            "Simulated research with a real method: 5 in-depth interviews, 2 contextual inquiries and a review of 8 closed negotiations with 7 participants (3 Category Managers, 2 Product Managers, 2 Supervisors). The goal was to map the real process and quantify the cost of managing it outside the system.",
+        },
+        {
+          title: "Synthesis & Insights",
+          description:
+            "From the affinity clusters I identified 5 key insights: everyone had their own «version of the truth», approvals were informal and got lost, reconstructing a deal took ~2.5 hours, the handoff to operations was where errors occurred, and supervisors had no pipeline visibility.",
+        },
+        {
+          title: "Opportunities & Validation",
+          description:
+            "I translated insights into 4 HMW questions: a single source of truth, traceable approvals, real-time status tracking and eliminating manual transcription. I validated all 5 hypotheses: 3 fully confirmed, 1 partial to be measured in testing and 1 new emerging hypothesis about pipeline visibility.",
+        },
+        {
+          title: "Prioritization & MVP Roadmap",
+          description:
+            "I prioritized the epics by impact/effort and defined the scope with MoSCoW: the MVP (Now) includes a negotiation record, status management, version history, an approval workflow with reason and a basic audit trail. The plan is completed with Next and Later phases anchored to measurable research-based metrics.",
+        },
+        {
+          title: "As-Is / To-Be Flows & Wireframes",
+          description:
+            "I documented the current flow (As-Is) with its 2 untraceable iteration loops and contrasted it with the proposed flow (To-Be), where every step is logged with its state, iterations automatically generate new versions and the handoff to operations is direct. I delivered lo-fi wireframes of the negotiations list, the conditions record, the version history and the approval flow.",
+        },
+      ],
+    },
+    gallery: {
+      intro:
+        "The proposed design brings the entire negotiation cycle inside the platform: from creating the negotiation to the automatic handoff to operations, with full traceability and a real-time state machine. The research baseline (3/8 discrepancies · 2.5 h reconstruction time · 0% formal approvals) defines the measurable success metrics post-launch.",
+    },
+    outcomes: {
+      title: "Key Decisions",
+      items: [
+        {
+          label: "Research before screens:",
+          text: "I proposed designing no interfaces until the problem was validated with evidence. Research confirmed the gap wasn't visual but structural: the negotiation flow simply didn't exist inside the system. This shaped the entire MVP scope.",
+        },
+        {
+          label: "Metrics anchored to the baseline:",
+          text: "Every KPI in the roadmap has its counterpart in the research (discrepancies, reconstruction time, formal approvals), making it possible to demonstrate business impact post-launch, not just perceived improvement.",
+        },
+        {
+          label: "An MVP that solves the root cause:",
+          text: "Rather than adding features, the MVP tackles the 3 highest-impact, lowest-effort insights (single source of truth, approval traceability, status management). The automatic handoff is deferred to Next to avoid blocking the launch with complex integrations.",
+        },
+      ],
+    },
+  },
   "neoris-etb": {
     title: "Coverage Validation",
     subtitle: "Self-service fiber-optic coverage validation for ETB in Bogotá",

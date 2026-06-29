@@ -3,8 +3,8 @@ import { projects, getProjectBySlug, getProjects } from "./projects";
 import { projectsEn } from "./projects.en";
 
 describe("projects data", () => {
-  it("exposes the four case studies", () => {
-    expect(projects).toHaveLength(4);
+  it("exposes the six case studies", () => {
+    expect(projects).toHaveLength(6);
   });
 
   it("has unique slugs", () => {
