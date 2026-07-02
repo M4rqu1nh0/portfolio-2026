@@ -7,6 +7,7 @@ import NotFound from "@/pages/NotFound";
 import Reveal from "@/components/Reveal";
 import PageTransition from "@/components/PageTransition";
 import Seo from "@/components/Seo";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { getProjectBySlug } from "@/data/projects";
 import { useLang } from "@/i18n/LanguageProvider";
 
@@ -229,9 +230,12 @@ const ProjectPage = () => {
           <p className="text-muted-foreground mb-8">{t.project.ctaText}</p>
           <div className="flex items-center justify-center gap-4">
             <a
-              href="mailto:contacto@mvc-ux.dev"
-              className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity shadow-glow"
+              href="https://wa.me/+56991258660"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity shadow-glow flex items-center gap-2"
             >
+              <WhatsAppIcon />
               {t.project.ctaContact}
             </a>
             <Link
