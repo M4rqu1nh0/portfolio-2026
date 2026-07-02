@@ -70,8 +70,8 @@ const es: Dictionary = {
   },
   hero: {
     badge: "Valparaíso, Chile · 10+ años de experiencia",
-    headingLead: "Construyo productos digitales que",
-    headingHighlight: "logran objetivos",
+    headingLead: "Conecto UX, Frontend e IA para crear",
+    headingHighlight: "productos digitales que funcionan.",
     subtitle:
       "Senior UX Designer con enfoque end-to-end. Desde el discovery hasta el código, creo productos usables y que cumplen metas de negocio.",
     downloadCv: "Descargar CV",
@@ -165,8 +165,8 @@ const en: Dictionary = {
   },
   hero: {
     badge: "Valparaíso, Chile · 10+ years of experience",
-    headingLead: "I build digital products that",
-    headingHighlight: "achieve goals",
+    headingLead: "I connect UX, Frontend and AI to build",
+    headingHighlight: "digital products that work.",
     subtitle:
       "Senior UX Designer with an end-to-end approach. From discovery to code, I craft usable products that meet business goals.",
     downloadCv: "Download CV",
