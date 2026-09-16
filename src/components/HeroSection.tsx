@@ -28,7 +28,7 @@ const HeroSection = () => {
 
             <div className="flex flex-wrap items-center gap-4 mt-10 animate-fade-up opacity-0 stagger-4">
               <a
-                href="/pdf/CV-Marco-Villegas-UX-e2e.pdf"
+                href="/pdf/CV_Marco_Villegas_Senior_Product_Designer_ES.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary text-primary-foreground font-medium px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity shadow-card"
