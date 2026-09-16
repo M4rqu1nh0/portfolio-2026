@@ -73,7 +73,7 @@ const es: Dictionary = {
     headingLead: "Conecto UX, Frontend e IA para crear",
     headingHighlight: "productos digitales que funcionan.",
     subtitle:
-      "Senior UX Designer con enfoque end-to-end. Desde el discovery hasta el código, creo productos usables y que cumplen metas de negocio.",
+      "Senior Product Designer / UX Designer con enfoque end-to-end. Desde el discovery hasta el código, creo productos usables y que cumplen metas de negocio.",
     downloadCv: "Descargar CV",
     linkedin: "LinkedIn",
   },
@@ -99,38 +99,38 @@ const es: Dictionary = {
     intro: "Más de dos décadas construyendo productos digitales en consultoría, banca y tecnología.",
     items: [
       {
-        role: "Senior UX",
+        role: "Senior UX Designer",
         company: "Zenta Group",
         period: "2025 - 2026",
         description: "Proyecto a honorarios por 3 meses para Discovery en cliente (COPEC).",
       },
       {
-        role: "FrontEnd / UX",
+        role: "UX Designer Híbrido (Frontend)",
         company: "Aibomarket.com",
         period: "2024 - 2025",
         description: "Marketplace gastronómico B2B. Frontend con NextJS y colaboración en definición UX.",
       },
       {
-        role: "Líder Técnico UX · UX/UI · Frontend",
+        role: "Product Designer - UX/UI Designer - Frontend",
         company: "NEORIS",
         period: "2016 - 2023",
         description:
           "Consultoría internacional. Proyectos para Banco Santander, BUPA, ETB Colombia. Lideré área UX en Chile, Perú y Colombia.",
       },
       {
-        role: "Desarrollador Web",
+        role: "Web Developer",
         company: "Filiales Chilquinta",
         period: "2008 - 2015",
         description: "Gestión de sitios web de 4 filiales. Desarrollo frontend, contenido multimedia y campañas.",
       },
       {
-        role: "Desarrollador Web y Multimedia",
+        role: "Frontend Developer / Web Administrator",
         company: "San Francisco Lodge",
         period: "2006 - 2008",
         description: "Desarrollo web, CDs multimedia y atención digital para hotel de montaña.",
       },
       {
-        role: "Desarrollador Multimedia y Web",
+        role: "Multimedia & Web Developer",
         company: "Mito Consultores",
         period: "2000 - 2006",
         description: "Módulos interactivos EducActiva, CDs multimedia y sitios web corporativos.",
@@ -168,7 +168,7 @@ const en: Dictionary = {
     headingLead: "I connect UX, Frontend and AI to build",
     headingHighlight: "digital products that work.",
     subtitle:
-      "Senior UX Designer with an end-to-end approach. From discovery to code, I craft usable products that meet business goals.",
+      "Senior Product Designer / UX Designer with an end-to-end approach. From discovery to code, I craft usable products that meet business goals.",
     downloadCv: "Download CV",
     linkedin: "LinkedIn",
   },
@@ -194,19 +194,19 @@ const en: Dictionary = {
     intro: "Over two decades building digital products across consulting, banking and technology.",
     items: [
       {
-        role: "Senior UX",
+        role: "Senior UX Designer",
         company: "Zenta Group",
         period: "2025 - 2026",
         description: "3-month contract engagement for Discovery at client (COPEC).",
       },
       {
-        role: "FrontEnd / UX",
+        role: "Hybrid UX Designer (Frontend)",
         company: "Aibomarket.com",
         period: "2024 - 2025",
         description: "B2B food-service marketplace. Frontend with NextJS and collaboration on UX definition.",
       },
       {
-        role: "UX Technical Lead · UX/UI · Frontend",
+        role: "Product Designer - UX/UI Designer - Frontend",
         company: "NEORIS",
         period: "2016 - 2023",
         description:
