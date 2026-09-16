@@ -200,7 +200,7 @@ const en: Dictionary = {
         description: "3-month contract engagement for Discovery at client (COPEC).",
       },
       {
-        role: "UX Designer Híbrido (Frontend)",
+        role: "Hybrid UX Designer (Frontend)",
         company: "Aibomarket.com",
         period: "2024 - 2025",
         description: "B2B food-service marketplace. Frontend with NextJS and collaboration on UX definition.",
